@@ -22,8 +22,32 @@
             </ul>
         </nav>
     </header>
-	 <h1>Transfer Money</h1>
+	 <h3>Transfer funds</h3>
+<div class="container">
+
+  <form action="/action_page.php">
+    <label for="from">From</label>
+    <select id="from" name="from">
+    	<option value="select">Select an account : </option>
+     	 <option value="daily">Daily Savings 012345</option>
+      	<option value="Growth">GrowthSavings 3122345</option>
+    </select>
+  
+    
+     <label for="to">To</label>
+    	<input type="text" id="to" name="to">
+      
+      <label for="amount">Amount</label>
+    	<input type="text" id="amount" name="amount">
+        
+     <label for="desc">Description</label>
+    	<input type="text" id="desc" name="desc" placeholder="Optional">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
 	 
-	 
+	  
 </body>
 </html>
