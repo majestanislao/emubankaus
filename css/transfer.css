@@ -77,9 +77,10 @@ input[type=submit]:hover {
 }
 
 div.container {
-  border-radius: 5px;
-  padding: 20px;
-  text-align: center;
+	margin: auto;
+	border-radius: 5px;
+	padding: 20px;
+
 }
 form {
 	text-align: center; {
