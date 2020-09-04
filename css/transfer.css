@@ -79,3 +79,8 @@ input[type=submit]:hover {
 div.container {
   border-radius: 5px;
   padding: 20px;
+
+}
+form {
+	margin: auto;
+	
