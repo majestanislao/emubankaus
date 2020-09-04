@@ -76,8 +76,11 @@ input[type=submit]:hover {
   background-color: lightsteelblue;
 }
 
+p.tf {
+  margin:25px;
+}
+
 div.container {
-	margin: center;
 	border-radius: 5px;
 	padding: 20px;
 }
