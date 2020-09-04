@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+}
+	box-sizing: border-box; {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+li, a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+}
+
+body {
+    background: mintcream;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    background: lightsteelblue;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    background: lightsteelblue;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    background: lightsteelblue;
+}
+
+.nav-links li a:hover {
+    color: dodgerblue;
+}
+
+h1 {
+    padding: 30px 10%;
+}
+. emu{
+    position: relative;
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type=withdraw] {
+  width: 10%;
+  background-color: dodgerblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type=withdraw]:hover {
+  background-color: lightsteelblue;
+  font-family: 'Poppins', sans-serif;
+}
+input[type=cancel] {
+  width: 10%;
+  background-color: dodgerblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type=cancel]:hover {
+  background-color: lightsteelblue;
+  font-family: 'Poppins', sans-serif;
+}
+label {
+	font-family: 'Poppins', sans-serif;		
+	text-align: center;
+}
+h3 {
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+}
+
+h4 {
+	margin: 10;
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
+	text-align: center;
