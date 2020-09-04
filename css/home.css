@@ -1,0 +1,43 @@
+.presentation, .presentation1 {
+    background: mintcream;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 10vh;
+    min-height: 70vh;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.info-text p, .info-text1 p {
+    padding: 30px 10%; 
+}
+
+.info-text h1, .info-text1 h1 {
+    font-size: 44px;
+    font-weight: 500;
+}
+
+.cta, .cta1 {
+    padding: 30px 10%;
+}
+
+.cover img, .cover1 img {
+    width: 100%;
+    height: auto;
+    max-width: 100vh;
+    padding: 30px 10%;
+}
+
+.introduction, .introduction1 {
+    flex: auto;
+}
+
+.apply-inquire, .apply-inquire1 {
+    border: 2px solid lightsteelblue;
+    background: transparent;
+    color: black;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
