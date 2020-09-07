@@ -1,48 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	
-	<meta charset="utf-8">
-	<meta name="view port" content="width=device-width, initial scale=1">
-	<title>Login</title>	
-	<link type="text/css" href="./css/login.css" rel="stylesheet"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login to Emubank Australia </title>
+	<link type="text/css" href="./css/login.css rel="stylesheet"/>
 </head>
 
-<header>
-	
-<div class "emu">
-<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
-</div>
-
-</header>
-
 <body>
+    <header>
+        <div class "emu">
+		<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
+		</div>
+		<nav>
+            <ul class="nav-links">
+				<li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+				<li><a href="login.html">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<h2>Login to Internet Banking</h2>
-	<div class="customer">
+	<center><h2>Login to Internet Banking</h2></center>
+	<form action="/action_page.php" method="post">
+	<div class="container">
+    <label for="client"><b>Client ID</b></label>
+    <input type="text" placeholder="Enter Client ID" name="" required>
 
-	<form class="form-inline" action="/action_page.php">
-	<label for="CID">Customer ID </label><br>
-    <input type="text" id="CID" name="CustomerID">
-	&nbsp; <a href="forgotID.html"> Forgot your Customer ID?</a>
-	<br>
-	<br>
-	<label for="Pass">Password</label><br>
-    <input type="text" id="Pass" name="Password">
-	&nbsp; <a href="forgotpass.html"> Forgot your Password?</a>
-	<br>
-	<br>
-	<center><button onclick="myFunction()" type="login class="login">Login</button></center>
-	<p id="login"></p>
-  </form>
-</div>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button></center>
+    <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+	</div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
 
 <main>
 <br>
-	<h1>First time here?</h1>
-	<p><h2><a href="member.html">Join Emu Bank now</a> Register for free </h2></p>
+	<h2>First time here?</h2>
+	<p><h3><a href="member.html">Join Emu Bank now</a> Register for free </h3></p></center>
 <br>
-
 </main>
 
 </body>
