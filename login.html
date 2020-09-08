@@ -25,15 +25,17 @@
 	<center><h2>Login to Internet Banking</h2>
 	<form action="/action_page.php" method="post">
 	<div class="container">
-    
-    <input type="text" placeholder="Enter Client ID" name="" required>
+	<div class="form_input">
+	<form action="process.php" method="POST">
+ 
+    <input type="text" placeholder="Enter Client ID" name="Client ID" required>
 	<p>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" required>
     <p>
 	<button type="submit">Login</button></center>
 	<label><center><input type="checkbox" checked="checked" name="remember"> Remember me</center></label>
 	</div>
-
+	</div>
 </form>
 
 <main>
