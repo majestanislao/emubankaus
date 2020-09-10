@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit/Withrawal</title>
+    <link type="text/css" href="./css/deposit.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <div class "emu">
+		<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
+		</div>
+		<nav>
+             <ul class="nav-links">
+                <li><a href="details.php">Account Details</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="deposit.php">Deposit Cash</a></li>
+				<li><a href="withdraw.php">Withdraw Cash</a></li>
+                <li><a href="faqs.php">FAQs</a></li>
+				<li><a href="logout.php">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+		<form action="/action_page.php" class="container">
+        <h3>Deposit</h3>
+	
+		<center><select id="from" name="from">
+    	<option value="select">Select an account : </option>
+     	<option value="daily">Daily Savings 012345</option>
+      	<option value="Growth">GrowthSavings 3122345</option>
+		</select>
+
+		<label for="amount">Amount</label>
+		<input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
+        
+		<label for="desc">Description</label>
+		<input type="text"  id="desc" name="desc" placeholder="Optional">
+
+		<input type="Deposit" value="Deposit">
+		<input type="Cancel" value="Cancel">
+	
+
+		<h4>Connect with us</h4>
+		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
+		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
+		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
+		<br>
+		&copy; Copyright 2020. All Rights Reserved.<br>
+		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
+ 
+</form>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<html>
+ <head>
+<title>Emu Bank of Australia</title>
+<meta charset="utf-8">
+<style type="text/css">
+   #wrapper {
+   width:900px;
+   background:#FFFF87;
+   margin:0 auto;
+   border:1px solid #000000;
+   text-align:left;
+   }
+  #header{
+   text-align:"right";
+   height: 150px;
+   background: #9999cc;
+   }
+   #navigation{
+   height: 50px;
+   background:#EBE6EB;
+   
+   }
+   #maincontent{
+   width:100%;
+   text-Align:"right";
+   margin:0 0 0 0 1000px;
+   padding:0 20px 20px 20px;
+   border: 1px solid #000000
+   }
+   #footer{
+   height:30px;
+   background: #EBEBEB;
+   text-align:center;
+   clear:both;
+   }
+{
+  height: 100%;
+  }
+
+ * {
+  box-sizing: border-box;
+ }
+
+ .bg-img {
+  background-image: url("images/pic.jpg");
+  min-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+ }
+
+ .container {
+  position: absolute;
+  right: 0;
+  margin: 20px
+  max-width: 700px;
+  height:390px;
+  padding: 20px;
+  background-color: white;
+ }
+
+  input[type=text], input[type=password] {
+  width: 50s%;
+  padding: 15px;
+  margin: 5px,0,22px,0;
+  border: none;
+  background: #f1f1f1;
+ }
+
+  input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+ }
+ .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+   
+   </style>
+   </head>
+   
+    <body>
+     <div id="wrapper">
+   
+        <div id="header">
+        <img src="images/emu.png" alt='Official logo' width='250px' height='100px'>
+        <font-face="arial" size="+7"> </font>
+   
+       <ul class="nav-links">
+                <li><a href="details.php">Account Details</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="deposit.php">Deposit Cash</a></li>
+				<li><a href="withdraw.php">Withdraw Cash</a></li>
+                <li><a href="faqs.php">FAQs</a></li>
+				<li><a href="logout.php">Log out</a></li>
+			</ul>
+   
+      </div>
+ 
+ 
+ 
+       
+   
+      <div id="maincontent">
+     <div class="bg-img">
+     <form action="/action_page.php" class="container">
+      <h1>My Account</h1>
+ 
+
+        <label for="cnumber">CLIENT NUMBER:</label>
+            <input type="text" id="cnumber" placeholder="Enter client number"name="cnumber" required> <br>
+            <label for="name">FULL NAME:</label>
+            <input type="text" id="name" placeholder="Enter full name"name="name" required><br>
+            <label for="phnumber">PHONE NUMBER:</label>
+            <input type="text" id="phnumber" placeholder="Enter phnumber"name="phnumber" required><br>
+            <label for="email">EMAIL ADDRESS:</label>
+            <input type="email" id="email" placeholder="Enter Email" name="email" required><br>
+            <label for="password">PASSWORD:</label>
+            <input type="password" id="password" placeholder="Enter Password"name="password" required><br>
+            <button type="submit" class="btn">Login</button>
+
+   
+         </form>
+         </div>
+   
+         <div id="maincontent">
+   
+          <table style="width:100%">
+          <tr>
+          <th text-align="left">Account: </th>
+          <th>EVERYDAY SAVINGS</th>
+         
+           </tr>
+           <tr>
+          <td>Type</td>
+          <td>BSB</td>
+          <td>ACCOUNT NUMBER</td>
+          <td>ACCOUNT BALANCE</td>
+           </tr>
+           <tr>
+            <td>
+            <select class="inputbox" name="account" id="account" style="width:180px;">
+               
+                <option id = "smartaccess" value="Smart Access">Smart Access</option>
+                <option id = "netbank" value="Net Bank Saver">Net Bank Saver</option>
+              </select></td>
+
+              <section></section>
+               <td id="bsb">0123</td>
+               <td id="accountnumber">10203040</td>
+              </tr>
+      </table>
+ </div>
+
+
+
+   <div id="footer">
+   &copy; Emu Bank of Australia                     | copyright | privacy policy | legal  issues | help & support | contact us
+   </div>
+   </div>
+   </body
+
+</html>
