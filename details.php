@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deposit/Withrawal</title>
-    <link type="text/css" href="./css/account.css" rel="stylesheet"/>
+    <link type="text/css" href="./css/details.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
