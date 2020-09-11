@@ -1,126 +1,33 @@
 <!DOCTYPE html>
-<html>
- <head>
-<title>Emu Bank of Australia</title>
-<meta charset="utf-8">
-<style type="text/css">
- #wrapper {
-   width:1000px;
-   Height:670px;
-   background: #FFFF87;
-   margin:0 auto;
-   border:1px solid #000000;
-   text-align:left;
-   }
-   #header{
-   text-align:"right";
-   height: 150px;
-   background: #9999cc;
-   }
-   #navigation{
-   height: 50px;
-   background:#EBE6EB;
-   
- 
-   
-   }
-   #maincontent{
-   width:100%;
-   text-Aign:"right";
-   margin:0 0 0 0 1000px;
-   padding:0 20px 20px 20px;
-   border: 1px solid #000000
-   }
-   #footer{
-   height:30px;
-   background: #EBEBEB;
-   text-align:center;
-   clear:both;
-   }
-    body, html {
-        height: 100%;
-      }
-     
-      * {
-        box-sizing: border-box;
-      }
-     
-      .bg-img {
-        /* The image used */
-        background-image: url("images/img3.jpg");
-     
-        /* Control the height of the image */
-        min-height: 380px;
-     
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-      }
-     
-      /* Add styles to the form container */
-      .container {
-        position: static;
-text-align:center;
-        right: 390;
-        margin: 20px;
-        max-width: 300px;
-        padding: 16px;
-        background-color: white;
-      }
-     
-      /* Full-width input fields */
-        input[type=text], input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        border: none;
-        background: #f1f1f1;
-      }
-     
-      input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-      }
-     
-      /* Set a style for the submit button */
-      .btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-      }
-     
-      .btn:hover {
-        opacity: 1;
-      }
-      </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit/Withrawal</title>
+    <link type="text/css" href="./css/deposite.css" rel="stylesheet"/>
 </head>
-<body>
-    <div id="wrapper">
-   
-<div id="header">
+    <header>
         <div class "emu">
-        <img src="logo.png" alt='Official logo' width='300px' height='100px'></a>
-        </div>
-<font face="arial" size="+7"></font>
-   
-    <button class="button1"> <a href="home.php">Home</button></a>
-    <button class="button2"><a href="account.php"> Account Details</button></a>  
-    <button class="button3"> <a href="deposite.php">Deposite/Withdraw</button></a>
-    <button class="button4"> <a href="faqs.php">FAQs/Help</button></a>
-    <button class="button5"> <a href="logout.php">Log out</button></a>
-       
-    </div>
-
-<div id="maincontent">
+		<img src="logo.png" alt='Official logo' width='300px' height='100px'></a>
+		</div>
+		<nav>
+             <ul class="nav-links">
+                <li><a href="details.html">Account Details</a></li>
+                <li><a href="transfer.html">Transfer Money</a></li>
+                <li><a href="deposit.html">Deposit Cash</a></li>
+				<li><a href="withdraw.html">Withdraw Cash</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+				<li><a href="logout.html">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+		<body>
+	
      <div class="bg-img">
         <form action="/action_page.php" class="container">
           <h1>Transfer Funds</h1>
+		  
+		  <h3><center>
           <label for="from"></b>From</label</b></label>
     <select id="from" name="from">
 
@@ -130,14 +37,14 @@ text-align:center;
     </select>
 
 
- 
-   
+  
+    
      <label for="to">To</label>
         <input type="text" placeholder="select a destination" id="to" name="to" required>
-     
+      
       <label for="amount">Amount</label>
         <input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
-       
+        
      <label for="desc">Description</label>
         <input type="text"  id="desc" name="desc" placeholder="Optional">
 
@@ -145,14 +52,13 @@ text-align:center;
   </form>
 </div>
 
-<div id="footer">
-   &copy; Emu Bank of Australia                     | copyright | privacy policy | legal  issues | help & support | contact us
-   </div>
-
-     
-
-     
-     
+<h4>Connect with us</h4>
+		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
+		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
+		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
+		<br>
+		&copy; Copyright 2020. All Rights Reserved.<br>
+		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
 </body>
 </html>
       
