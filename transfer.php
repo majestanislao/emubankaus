@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deposit/Withrawal</title>
-    <link type="text/css" href="./css/deposite.css" rel="stylesheet"/>
+    <link type="text/css" href="./css/transfer.css" rel="stylesheet"/>
 </head>
     <header>
         <div class "emu">
