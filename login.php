@@ -38,7 +38,7 @@
 	<main>
 		<br>
 			<h1>First time here?</h1>
-			<p><h2><a href="member.html">Join Emu Bank now</a> Register for free </h2></p>
+			<p><h2><a href="register.php">Join Emu Bank now</a> Register for free </h2></p>
 		<br>
 
 	</main>

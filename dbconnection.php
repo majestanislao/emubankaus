@@ -12,7 +12,7 @@ $con= mysqli_connect("localhost", "root", "", "login");
 								
 				if ($count = mysqli_num_rows($result) > 0)	
 				{
-					header('location:GENERAL.php');
+					header('location:index.php');
 				}
 				else
 				{
@@ -22,3 +22,4 @@ $con= mysqli_connect("localhost", "root", "", "login");
 		}
 
 ?>
+
