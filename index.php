@@ -3,66 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMU Bank Austrlalia</title>
-    <link type="text/css" href="./css/home.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
-    
+    <title>Emu Bank Australia</title>
+    <link type="text/css" href="./css/style.css" rel="stylesheet"/>
 </head>
+
+<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
+
+
 <body>
-    <header>
-        <a href="index.html"><img class="logo" src="/Images/emu.png" alt="logo"></a>
-		<nav>
-            <ul class="nav-links">
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-				<li><a href="withdraw.php">Withdraw Cash</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-				<li><a href="logout.php">Log out</a></li>
-			</ul>
-        </nav>
-    </header>
-    <main>
-        <section class="presentation">
-            <div class="introduction">
-                <div class="info-text">
-                    <h1>Have your dream home</h1>
-                    <p>Apply for a Emu Home Loan today to get our low interest rate and low-fee home loans.</p>
-                </div>
-                <div class="cta">
-                    <button class="apply-inquire"> Inquire now</button>
-                </div>
-            </div>
-            <div class="cover">
-                <img src="/Images/home-loan.jpg" alt="HomePic">
-            </div>
+<div class="navbar">
+  	<a href="#">About Us</a>
+	<a href="#">Banking</a>
+  	<a href="#">Transactions</a>
+	<a href="#">Pay bills</a>
+	<a href="#">Logout</a>
+  	<a href="#">Account settings</a>
+	<a href="#">Customer Support</a>
+	<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+	<a href="#">Logout</a>
 
-        </section>
-        <section class="presentation1">
-            <div class="cover1">
-                <img src="/Images/credit.jpg" alt="credit">
-            </div>
-            <div class="introduction1">
-                <div class="info-text1">
-                    <h1>Credit cards</h1>
-                    <p>Choose from our range of low rate, low fee and awards cards.</p>
-                </div>
-                <div class="cta1">
-                    <button class="apply-inquire1"> Apply now</button>
-                </div>
-            </div>
-
-		
-
-        </section>
-    </main>
+</div>
 	
 </body>
-<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
 </html>
