@@ -14,12 +14,12 @@
 		</div>
 		<nav>
              <ul class="nav-links">
-                <li><a href="details.html">Account Details</a></li>
-                <li><a href="transfer.html">Transfer Money</a></li>
-                <li><a href="deposit.html">Deposit Cash</a></li>
-				<li><a href="withdraw.html">Withraw Cash</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-				<li><a class= "logout" href="logout.html"><button>Log Out</button></a></li>
+                <li><a href="details.php">Account Details</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="deposit.php">Deposit Cash</a></li>
+				<li><a href="withdraw.php">Withraw Cash</a></li>
+                <li><a href="faqs.php">FAQs</a></li>
+				<li><a class= "logout" href="logout.php"><button>Log Out</button></a></li>
             </ul>
         </nav>
     </header>
