@@ -44,7 +44,7 @@
         </select>
         
         <label for="to">To</label>
-		<input type="text" placeholder="select a destination" id="to" name="to" required>
+		<input type="text" placeholder="Select a destination" id="to" name="to" required>
       
 		<label for="amount">Amount</label>
 		<input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
@@ -52,7 +52,7 @@
 		<label for="desc">Description</label>
 		<input type="text"  id="desc" name="desc" placeholder="Optional">    
 
-        <input type="submit" value="Submit">
+        <input type="Submit" value="Submit">
       </form>
     </div>
   </div>

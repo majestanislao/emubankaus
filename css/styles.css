@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 li, a {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: black;
-}
 
-body {
-    background: mintcream;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 5%;
     background: lightsteelblue;
 }
 
@@ -25,7 +26,7 @@ header {
 
 . nav-links li {
     display: inline-block;
-    padding: 0px 20px;
+   
     background: lightsteelblue;
 }
 
@@ -42,11 +43,7 @@ header {
     position: relative;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Style inputs */
+/* Styles */
 input[type=text], select {
   width: 100%;
   padding: 12px;
@@ -64,18 +61,18 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+input[type=Submit]:hover {
+  background-color: dodgerblue;
 }
 
-/* Style the container/contact section */
+/* Styles in the container*/
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
 }
 
-/* Create two columns that float next to eachother */
+/* two columns that floats next to eachother */
 .column {
   float: left;
   width: 50%;
@@ -96,3 +93,4 @@ input[type=submit]:hover {
     width: 100%;
     margin-top: 0;
   }
+}
