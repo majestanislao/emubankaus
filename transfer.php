@@ -24,9 +24,7 @@
 			</ul>
         </nav>
     </header>
-	
-     <h3>Transfer funds</h3>
-     <div class="bg-img">
+
         <form action="/action_page.php" class="container">
           <h1>Transfer Funds</h1>
           <label for="from"></b>From</label</b></label>
@@ -48,20 +46,18 @@
     <input type="submit" value="Submit">
 	</form>
 	</div>
-	<br>
-	<br>
-	<h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="30"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="30"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="30"></a>
+		<br>
+		<br>
+		<center><h4>Connect with us</h4>
+		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
+		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
+		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
 		<br>
 		<br>
 		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a>
-
+		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
 	 
 	  
 </body>
 </html>
 	
->>>>>>> c67adb61a070ae0a9181035057cd23c2f826d9f2:transfer.html
