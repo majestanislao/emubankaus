@@ -24,31 +24,40 @@
         </nav>
     </header>
 	
-		<h1>Transfer Funds</h1>
-        <div class="container">
-		<form action="/action_page.php">
-
-       
-			<label for="from"></b>From</label</b></label>
-			<select id="from" name="from">
-			<option value="select">Select an account : </option>
-			<option value="daily">Daily Savings 012345</option>
-			<option value="Growth">GrowthSavings 3122345</option>
-			</select>
-    
-    <label for="to">To</label>
+<div class="container">
+  <div style="text-align:center">
+    <h2>Transfer Money</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/w3images/map.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+      
+        <label for="From">From</label>
+        <select id="From" name="From">
+        <option value="select">Select an account : </option>
+		<option value="daily">Daily Savings 012345</option>
+		<option value="Growth">GrowthSavings 3122345</option>
+        </select>
+        
+         <label for="to">To</label>
     <input type="text" placeholder="select a destination" id="to" name="to" required>
       
+   
     <label for="amount">Amount</label>
     <input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
         
     <label for="desc">Description</label>
-    <input type="text"  id="desc" name="desc" placeholder="Optional">
+    <input type="text"  id="desc" name="desc" placeholder="Optional">    
 
-    <input type="submit" value="Submit">
-	</div>
-	</form>
-	</center>
+        
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
 	
 		<br>
 		<br>
