@@ -25,7 +25,7 @@
         </nav>
     </header>
 
-        <form action="/action_page.php" class="container">
+        <center><form action="/action_page.php" class="container">
           <h1>Transfer Funds</h1>
           <label for="from"></b>From</label</b></label>
 		<select id="from" name="from">
@@ -44,7 +44,7 @@
     <input type="text"  id="desc" name="desc" placeholder="Optional">
 
     <input type="submit" value="Submit">
-	</form>
+	</form></center>
 	</div>
 		<br>
 		<br>
