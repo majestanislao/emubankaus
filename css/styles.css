@@ -60,7 +60,7 @@ h1 {
 }
 
 . accordion-label,
-.a ccordion-content {
+. a ccordion-content {
     padding: 14px 20px;
     display: block;
     color: white;
@@ -108,7 +108,7 @@ h1 {
     position: relative;
 }
 
-input[type=text], select, textarea {
+. input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -119,7 +119,7 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+. input[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -128,7 +128,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+. input[type=submit]:hover {
   background-color: #45a049;
 }
 

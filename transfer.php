@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +23,11 @@
 			</ul>
         </nav>
     </header>
-
+		<h1>Transfer Funds</h1>
         <center><div class="container">
 		<form action="/action_page.php">
 
-        <h1>Transfer Funds</h1>
+       
 			<label for="from"></b>From</label</b></label>
 			<select id="from" name="from">
 			<option value="select">Select an account : </option>
