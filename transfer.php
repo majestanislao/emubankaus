@@ -13,7 +13,7 @@
 		</div>
 		<nav>
             <ul class="nav-links">
-                <li><a href="details.html">Account Details123</a></li>
+                <li><a href="details.html">Account Details</a></li>
                 <li><a href="transfer.html">Transfer Money</a></li>
                 <li><a href="deposit.html">Deposit Cash</a></li>
                 <li><a href="withdraw.html">Withdraw Cash</a></li>
@@ -24,11 +24,11 @@
         </nav>
     </header>
 	
-<div class="container">
-  <div style="text-align:center">
-    <h2>Transfer Money</h2>
-  </div>
-  <div class="row">
+	<div class="container">
+	<div style="text-align:center">
+		<h2>Transfer Money</h2>
+	</div>
+	<div class="row">
     <div class="column">
       <img src="/w3images/map.jpg" style="width:100%">
     </div>
@@ -42,15 +42,15 @@
 		<option value="Growth">GrowthSavings 3122345</option>
         </select>
         
-         <label for="to">To</label>
-    <input type="text" placeholder="select a destination" id="to" name="to" required>
+        <label for="to">To</label>
+		<input type="text" placeholder="select a destination" id="to" name="to" required>
       
    
-    <label for="amount">Amount</label>
-    <input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
-        
-    <label for="desc">Description</label>
-    <input type="text"  id="desc" name="desc" placeholder="Optional">    
+		<label for="amount">Amount</label>
+		<input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
+			
+		<label for="desc">Description</label>
+		<input type="text"  id="desc" name="desc" placeholder="Optional">    
 
         
         <input type="submit" value="Submit">
