@@ -30,8 +30,9 @@
 	</div>
 	<div class="row">
     <div class="column">
-      <img src="/Images/transfer.jpg" style="width:100%">
+    <img src="/Images/transfer.jpg" style="width:100%">
     </div>
+	
     <div class="column">
       <form action="/action_page.php">
       
@@ -45,14 +46,12 @@
         <label for="to">To</label>
 		<input type="text" placeholder="select a destination" id="to" name="to" required>
       
-   
 		<label for="amount">Amount</label>
 		<input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
 			
 		<label for="desc">Description</label>
 		<input type="text"  id="desc" name="desc" placeholder="Optional">    
 
-        
         <input type="submit" value="Submit">
       </form>
     </div>
