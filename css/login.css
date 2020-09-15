@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @charset "utf-8";
 /* CSS Document */
 . emu{
     position: relative;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
+}
+box-sizing: border-box; {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 .over-img{
     position: left;
     top: 80%;
     left: 20%;
-	box-sizing: border-box; {
+	box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -19,7 +23,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+}
 li, a {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -32,7 +36,7 @@ li, a {
 	background: lightsteelblue;
 	margin: 20px auto;
 	padding: 30px;
-
+	}
 header {
     display: flex;
     justify-content: space-between;
@@ -42,11 +46,11 @@ header {
 }
 body{
 	background: mintcream;
-
+}
 .logo {
     cursor: pointer;
 }
-	input[type=text] {
+  input[type=text] {
   width: 100%;
   padding: 12px 20px;
   border: 1px solid #ccc;
@@ -55,7 +59,7 @@ body{
   margin: 6px;
   margin-bottom: 16px;
   font-family: Arial;
-
+	}
 .nav-links li {
     display: inline-block;
     padding: 0px 20px;
@@ -68,8 +72,9 @@ body{
     background: lightsteelblue;
 }
 
-	input[type=submit]:hover {
+input[type=submit]:hover {
 	background-color: white;
+	}
 .nav-links li a:hover {
     color: dodgerblue;
 	}
@@ -85,14 +90,14 @@ body{
 	main h2, h3 {
 	text-align: center;
 	font-size : 14px;
-	
 }
 	.customer {
 	margin: 0 auto;
 	width: 400px;
 	font-family: Arial;
+	}
 input[type=text], input[type=password] {
-  width: 50%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -102,8 +107,8 @@ input[type=text], input[type=password] {
 	body h2 {
 	text-align: center;
 	font-family: Arial;
-
-button {
+	}
+btn {
   background-color: dodgerblue;
   color: white;
   padding: 12px 20px;
@@ -116,7 +121,7 @@ button {
 	font-family: Arial;
 	font-size: 15px;
 	text-align: center;
-
+	}
 button:hover {
   opacity: 0.8;
 }
@@ -124,7 +129,7 @@ button:hover {
 	font-family: Arial;
 	font-size: 12px;
 	text-align: center;
-
+	}
 .cancelbtn {
   width: auto;
   padding: 12px 10px;
@@ -145,3 +150,4 @@ button:hover {
 .container {
   padding: 10px;
   width: 50%;
+}
