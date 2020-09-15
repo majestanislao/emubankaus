@@ -2,6 +2,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -10,33 +12,37 @@ li, a {
     font-weight: 500;
     font-size: 16px;
     color: black;
+}
 
+body {
+    background: mintcream;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 5%;
     background: lightsteelblue;
 }
 
-. logo {
+.logo {
     cursor: pointer;
 }
 
-. nav-links li {
+.nav-links li {
     display: inline-block;
-   
+    padding: 0px 20px;
     background: lightsteelblue;
 }
 
-. nav-links li a {
+.nav-links li a {
     transition: all 0.3s ease 0s;
     text-decoration: none;
     background: lightsteelblue;
 }
 
-. nav-links li a: hover {
+.nav-links li a:hover {
     color: dodgerblue;
 }
 . emu{
