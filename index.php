@@ -63,6 +63,10 @@
 		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
 		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
 		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		&copy; Copyright 2020. All Rights Reserved.<br>
 		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
 </html>
