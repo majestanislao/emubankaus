@@ -3,7 +3,7 @@
 <head>
 	<title>Emu Bank of Australia</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
+	<link rel="stylesheet" href=".emunakaus/css/styles.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -24,8 +24,8 @@
         </nav>
     </header>
 	
-		<h1>Transfer Funds</h1>
-        <center><div class="container">
+		<center><h1>Transfer Funds</h1>
+        <div class="container">
 		<form action="/action_page.php">
 
        
