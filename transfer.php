@@ -1,11 +1,10 @@
-<<<<<<< HEAD:transfer.php
+
 <!DOCTYPE html>
 <html>
- <head>
-<title>Emu Bank of Australia</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
-
+<head>
+	<title>Emu Bank of Australia</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
@@ -14,12 +13,13 @@
 		</div>
 		<nav>
               <ul class="nav-links">
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-				<li><a href="withdraw.php">Withdraw Cash</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-                <li><a class= "logout" href="logout.php"><button>Log Out</button></a></li>
+                <li><a href="details.html">Account Details</a></li>
+                <li><a href="transfer.html">Transfer Money</a></li>
+                <li><a href="deposit.html">Deposit Cash</a></li>
+                <li><a href="withdraw.html">Withdraw Cash</a></li>
+                <li><a href="cardsettings.html">Card Settings</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a class= "logout" href="logout.html"><button>Log Out</button></a></li>
 			</ul>
            
         </nav>
@@ -48,19 +48,18 @@
     <input type="submit" value="Submit">
   </form>
 </div>
-		<br>
-		<br>
-		<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
+
+	<h4>Connect with us</h4>
+		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="30"></a>
+		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="30"></a>
+		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="30"></a>
 		<br>
 		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
-
+		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a>
 
 	 
 	  
 </body>
 </html>
+	
+>>>>>>> c67adb61a070ae0a9181035057cd23c2f826d9f2:transfer.html
