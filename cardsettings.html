@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Withdraw Cash</title>
-	<link type="text/css" href="./css/withdraw.css" rel="stylesheet"/>
+    <title>Deposit/Withrawal</title>
+	<link type="text/css" href="./css/cardsettings.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
 </head>
 <body>
@@ -14,42 +14,38 @@
 		</div>
 		<nav>
              <ul class="nav-links">
-<<<<<<< HEAD:withdraw.php
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-				<li><a href="withdraw.php">Withraw Cash</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-				<li><a class= "logout" href="logout.php"><button>Log Out</button></a></li>
-=======
                 <li><a href="details.html">Account Details</a></li>
                 <li><a href="transfer.html">Transfer Money</a></li>
                 <li><a href="deposit.html">Deposit Cash</a></li>
-				<li><a href="withdraw.html">Withraw Cash</a></li>
-				<li><a href="cardsettings.html">Card Settings</a></li>
+                <li><a href="withdraw.html">Withdraw Cash</a></li>
+                <li><a href="cardsettings.html">Card Settings</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
 				<li><a class= "logout" href="logout.html"><button>Log Out</button></a></li>
->>>>>>> c67adb61a070ae0a9181035057cd23c2f826d9f2:withdraw.html
             </ul>
         </nav>
     </header>
 		<form action="/action_page.php" class="container">
-        <h3>Withdraw Cash</h3>
-	
-		<center><select id="from" name="from">
-    	<option value="select">Select an account : </option>
-     	<option value="daily">Daily Savings 012345</option>
-      	<option value="Growth">GrowthSavings 3122345</option>
-		</select>
-
-		<label for="amount">Amount</label>
-		<input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
+        <h5>Change your daily transaction limit:</h5>
         
-		<label for="desc">Description</label>
-		<input type="text"  id="desc" name="desc" placeholder="Optional">
+        
+		<center><select id="amt" name="amt">
+        <option disabled selected value> -- select an option -- </option>
+    	<option value="100">100</option>
+     	<option value="500">500</option>
+      	<option value="1000">1000</option>
+      	<option value="2000">2000</option>
+		</select>
+        
+        <div class="button">
+            <button class="btn">Apply</button>
+        </div>
+        
+        <h6>If your debit or credit card is lost/stolen, disable your card here:</h6>
 
-		<input type="Withdraw" value="Withdraw">
-		<input type="Cancel" value="Cancel">
+        <div class="ctr">
+            <img src="/Images/card.jpg" alt="card">
+            <button class="butt"><img class="disablepic" src="/Images/disablecard.png" alt="disablecard">Disable Now</button>
+          </div>
 
 
 		<h4>Connect with us</h4>
