@@ -25,14 +25,16 @@
         </nav>
     </header>
 
-        <center><form action="/action_page.php" class="container">
-          <h1>Transfer Funds</h1>
-          <label for="from"></b>From</label</b></label>
-		<select id="from" name="from">
-    	<option value="select">Select an account : </option>
-     	<option value="daily">Daily Savings 012345</option>
-      	<option value="Growth">GrowthSavings 3122345</option>
-		</select>
+        <center><div class="container">
+		<form action="/action_page.php">
+
+        <h1>Transfer Funds</h1>
+			<label for="from"></b>From</label</b></label>
+			<select id="from" name="from">
+			<option value="select">Select an account : </option>
+			<option value="daily">Daily Savings 012345</option>
+			<option value="Growth">GrowthSavings 3122345</option>
+			</select>
     
     <label for="to">To</label>
     <input type="text" placeholder="select a destination" id="to" name="to" required>
@@ -44,8 +46,10 @@
     <input type="text"  id="desc" name="desc" placeholder="Optional">
 
     <input type="submit" value="Submit">
-	</form></center>
 	</div>
+	</form>
+	</center>
+	
 		<br>
 		<br>
 		<center><h4>Connect with us</h4>

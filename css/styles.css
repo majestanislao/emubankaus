@@ -2,8 +2,6 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -26,23 +24,23 @@ header {
     background: lightsteelblue;
 }
 
-.logo {
+. logo {
     cursor: pointer;
 }
 
-.nav-links li {
+. nav-links li {
     display: inline-block;
     padding: 0px 20px;
     background: lightsteelblue;
 }
 
-.nav-links li a {
+. nav-links li a {
     transition: all 0.3s ease 0s;
     text-decoration: none;
     background: lightsteelblue;
 }
 
-.nav-links li a:hover {
+. nav-links li a:hover {
     color: dodgerblue;
 }
 
@@ -51,7 +49,7 @@ h1 {
 	text-align: center;
 }
 
-.accordion {
+. accordion {
     max-width: 1000px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -61,8 +59,8 @@ h1 {
     margin: auto;
 }
 
-.accordion-label,
-.accordion-content {
+. accordion-label,
+.a ccordion-content {
     padding: 14px 20px;
     display: block;
     color: white;
@@ -71,11 +69,11 @@ h1 {
     transition: background 0.1s;
 }
 
-.accordion-label:hover {
+. accordion-label:hover {
     background: rgba(0, 0, 0, 0.1)
 }
 
-.accordion-label::after {
+. accordion-label::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -88,38 +86,54 @@ h1 {
     transition: transform 0.4s;
 }
 
-.accordion-content {
+. accordion-content {
     background: lightsteelblue;
     line-height: 1.5;
     font-size: .85em;
     display: none;
 }
 
-.accordion-input {
+. accordion-input {
     display: none;
 }
 
-.accordion-input:checked ~ .accordion-content {
+. accordion-input:checked ~ .accordion-content {
     display:block;
 }
 
-.accordion-input:checked ~ .accordion-label::after {
+. accordion-input:checked ~ .accordion-label::after {
     transform: translate(-50%) rotate(.5turn);
 }
 . emu{
     position: relative;
 }
 
-button {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    color: cornsilk;
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
-button:hover {
-    background-color: rgba(0, 136, 169, .5);
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+. container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
