@@ -13,7 +13,7 @@
 		</div>
 		<nav>
             <ul class="nav-links">
-                <li><a href="details.html">Account Details</a></li>
+                <li><a href="details.html">Account Details123</a></li>
                 <li><a href="transfer.html">Transfer Money</a></li>
                 <li><a href="deposit.html">Deposit Cash</a></li>
                 <li><a href="withdraw.html">Withdraw Cash</a></li>
