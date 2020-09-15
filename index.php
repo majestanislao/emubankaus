@@ -51,22 +51,19 @@
                     <button class="apply-inquire1"> Apply now</button>
                 </div>
             </div>
-
-		
-
         </section>
     </main>
 	
 </body>
-<center><h4>Connect with us</h4>
+		<br>
+		<br>
+		<br>
+		<center><h4>Connect with us</h4>
 		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
 		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
 		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
+		&copy; Copyright 2020. All Rights Reserved.
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
 		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
 </html>
