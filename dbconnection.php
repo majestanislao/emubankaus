@@ -1,4 +1,7 @@
 <?php
+	
+	$con = mysqli_connect('localhost', 'root', '', 'login');
+	
 	if (isset($_POST['log']))
 		{
 			$CustomerID = mysqli_real_escape_string($con,$_POST['CustomerID']);
