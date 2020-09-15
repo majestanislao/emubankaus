@@ -40,13 +40,17 @@ header {
     background: lightsteelblue;
 }
 
-. nav-links li a:hover {
+. nav-links li a: hover {
     color: dodgerblue;
 }
 . emu{
     position: relative;
 }
 
+body 
+	text-align: center{
+}
+	
 . input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
