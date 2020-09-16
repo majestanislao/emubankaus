@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-}
-	box-sizing: border-box; {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -12,6 +12,7 @@ li, a {
     font-weight: 500;
     font-size: 16px;
     color: black;
+	letter-spacing: -1px
 }
 
 body {
@@ -32,12 +33,11 @@ header {
 
 .nav-links li {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0px 10px;
     background: lightsteelblue;
 }
 
 .nav-links li a {
-    transition: all 0.3s ease 0s;
     text-decoration: none;
     background: lightsteelblue;
 }
@@ -46,24 +46,19 @@ header {
     color: dodgerblue;
 }
 
-h1 {
-    padding: 30px 10%;
-}
-. emu{
-    position: relative;
-}
+
+/* Styles */
 input[type=text], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
-input[type=withdraw] {
-  width: 10%;
+input[type=Withdraw] {
+  width: 18%;
   background-color: dodgerblue;
   color: white;
   padding: 14px 20px;
@@ -74,12 +69,14 @@ input[type=withdraw] {
   font-family: 'Poppins', sans-serif;
 }
 
-input[type=withdraw]:hover {
+input[type=Withdraw]:hover {
   background-color: lightsteelblue;
   font-family: 'Poppins', sans-serif;
+
 }
-input[type=cancel] {
-  width: 10%;
+
+input[type=Cancel] {
+  width: 18%;
   background-color: dodgerblue;
   color: white;
   padding: 14px 20px;
@@ -90,7 +87,7 @@ input[type=cancel] {
   font-family: 'Poppins', sans-serif;
 }
 
-input[type=cancel]:hover {
+input[type=Cancel]:hover {
   background-color: lightsteelblue;
   font-family: 'Poppins', sans-serif;
 }
@@ -98,13 +95,40 @@ label {
 	font-family: 'Poppins', sans-serif;		
 	text-align: center;
 }
-h3 {
+h2 {
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 }
 
-h4 {
-	margin: 10;
-	font-family: 'Poppins', sans-serif;
-	font-size: 25px;
-	text-align: center;
+/*container styles*/
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* two columns that floats next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=Withdraw] {
+    width: 100%;
+    margin-top: 0;
+  }
+  .column, input[type=Cancel] {
+    width: 100%;
+    margin-top: 0;
+  }
