@@ -6,7 +6,9 @@
 	<meta name="view port" content="width=device-width, initial scale=1">
 	<title>Register for EMU banking</title>	
 	<link type="text/css" href="./css/register.css" rel="stylesheet"/>
-		
+	<?php
+		include "dbconnection.php";
+		?>	
 </head>
 
 <header>
@@ -18,54 +20,6 @@
 </header>
 
 <body>
-<?php
-
-if (isset ($_POST['register']))
-	
-	{
-		$firstname = $_POST['firstname'];
-		$lastname = $_POST['lastname'];
-		$gender = $_POST['gender'];
-		$emailid = $_POST['emailid'];
-		$phone = $_POST['phone'];
-		$address = $_POST['address'];
-		$postcode = $_POST['postcode'];
-		$password = $_POST['password'];
-		$Cpassword = $_POST['Cpassword'];
-		
-		$customerscon = mysqli_connect('localhost', 'root', '', 'customers');
-		
-			if ($password === $Cpassword)
-			{
-				$duplicate = mysqli_query($customerscon, "select * from registration where emailid = '$emailid'");
-			
-				if (mysqli_num_rows($duplicate)>0)
-				{
-					$msg = "Email id is already in use";
-					header("Location: register.php?msg=$msg");
-				}
-				else
-				{
-					$customerssql = 	"INSERT INTO registration (firstname, lastname, gender, emailid, phone, address, postcode, password) 
-										VALUES ('$firstname', '$lastname', '$gender', '$emailid', '$phone', '$address', '$postcode', '$password')";
-		
-					if (!mysqli_query($customerscon,$customerssql))
-					{
-						echo 'data not inserted';
-					}
-					else 		
-					{
-						echo 'User Registered';
-					}
-				}
-			}
-			else
-			{
-				$msg = "Password don't match";
-				header("Location: register.php?msg=$msg");
-			}
-		}
-?>
 
 <div class="form">
 	<h2>Register for EMU Banking</h2>
@@ -81,16 +35,10 @@ if (isset ($_POST['register']))
 	value="<?php if(isset($_POST['lastname'])){echo htmlentities ($_POST['lastname']);}?>"><br>
 </div>
 <div class="inputfield">		
-	<label>Gender: </label>
-	<div class="selectone">
-		<select id="gender" name= "gender" required 
-		value="<?php if(isset($_POST['gender'])){echo htmlentities ($_POST['gender']);}?>"> 
-		<option name= "gender" value = "select">Select</option>
-		<option name= "gender" value = "male">Male</option>
-		<option name= "gender" value = "female">Female</option>
-		</select><br>
+	<label>Gender:</label>
+	<input type="radio" id= "gender" name="gender" required value="male"> Male
+	<input type="radio" id= "gender" name="gender" required value="female"> Female<br>	
 	</div>
-</div>
 <br>
 <div class="inputfield">		
 	<label>Email ID: </label>
@@ -99,8 +47,8 @@ if (isset ($_POST['register']))
 </div>
 
 <div class="inputfield">
-	<label>Phone: </label>
-	<input type="text" id="phone" name="phone" required 
+	<label>Phone: (Enter 10 Digit Phone Number) </label>
+	<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required 
 	value="<?php if(isset($_POST['phone'])){echo htmlentities ($_POST['phone']);}?>"><br>
 </div>
 
@@ -110,8 +58,8 @@ if (isset ($_POST['register']))
 	value="<?php if(isset($_POST['address'])){echo htmlentities ($_POST['address']);}?>"></textarea><br>
 </div>
 <div class="inputfield">
-	<label>Post code: </label>
-	<input type="text" id="pcode" name="postcode" required 
+	<label>Postcode: (Enter 4 Digit Postcode)</label>
+	<input type="tel" id="postcode" name="postcode" pattern="[0-9]{4}" required 
 	value="<?php if(isset($_POST['postcode'])){echo htmlentities ($_POST['postcode']);}?>"><br>
 </div>
 <div class="inputfield">
@@ -132,6 +80,12 @@ if (isset ($_POST['register']))
 </div>
   </form>
 </div>
+<main>
+		<br>
+			<h1>Login to use EMU bank services</h1>
+			<p><h2><a href="login.php">Login</a></h2></p>
+		<br>
 
+	</main>
 </body>
 </html>

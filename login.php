@@ -19,18 +19,16 @@
 	<div class="form">
 	<h2>Login to Internet Banking</h2>
 		<div class="customer">
-		<form class="form-inline" action="dbconnection.php" method = "POST">
-			<label for="CustomerID">Customer ID </label><br>
-			<input type="text" id="CustomerID" name="CustomerID">
-			&nbsp; <a href="forgotID.html"> Forgot your Customer ID?</a>
+		<form class="form-inline" action="login.php" method = "POST">
+			<label for="customerid">Customer ID </label><br>
+			<input type="text" id="customerid" name="customerid" required>
 			<br>
 			<br>
-			<label for="Password">Password</label><br>
-			<input type="text" id="Password" name="Password">
-			&nbsp; <a href="forgotpass.html"> Forgot your Password?</a>
+			<label for="password">Password</label><br>
+			<input type="password" id="password" name="password" required>
 			<br>
 			<br>
-			<center><button type="login" class="btn" name="log">login</button> </center>
+			<center><button type="login" class="btn" name="login">login</button> </center>
 			<p id="login"></p>
 		</form>
 		</div>
