@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@charset "utf-8";
+/* CSS Document */
+. emu{
+    position: relative;
+}
+box-sizing: border-box; {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.over-img{
+    position: left;
+    top: 80%;
+    left: 20%;
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.top-left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+li, a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+}
+	.form{
+	max-width: 500px;
+	width: 100%;
+	background: lightsteelblue;
+	margin: 20px auto;
+	padding: 30px;
+	}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    background: lightsteelblue;
+}
+body{
+	background: mintcream;
+}
+.logo {
+    cursor: pointer;
+}
+  input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 6px;
+  margin-bottom: 16px;
+  font-family: Arial;
+	}
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    background: lightsteelblue;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    background: lightsteelblue;
+}
+
+input[type=submit]:hover {
+	background-color: white;
+	}
+.nav-links li a:hover {
+    color: dodgerblue;
+	}
+	h1 {
+    padding: 30px 10%;
+	}
+	. emu{
+    position: relative;
+	}
+	body {
+	font-family: 'Poppins', sans-serif;
+	}
+	main h2, h3 {
+	text-align: center;
+	font-size : 14px;
+}
+	.customer {
+	margin: 0 auto;
+	width: 400px;
+	font-family: Arial;
+	}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+	body h1 {
+	text-align: center;
+	font-family: Arial;
+	}
+btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+	main h1 {
+	font-family: Arial;
+	font-size: 15px;
+	text-align: center;
+	}
+button:hover {
+  opacity: 0.8;
+}
+	main h2 {
+	font-family: Arial;
+	font-size: 12px;
+	text-align: center;
+	}
+.cancelbtn {
+  width: auto;
+  padding: 12px 10px;
+  background-color: #f44336;
+
+}
+
+	.form-inline button {
+  padding: 10px 20px;
+  width: 102%;
+  background-color: #2980B9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  
+ }
+.container {
+  padding: 10px;
+  width: 50%;
+}
