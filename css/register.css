@@ -45,6 +45,16 @@ input[type=email] {
   margin-bottom: 16px;
   font-family: Arial;
 }	
+input[type=tel] {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 6px;
+  margin-bottom: 16px;
+  font-family: Arial;
+}	
 .form .elements .inputfield .textarea{
 	position: relative;
 	resize: none;
