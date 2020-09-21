@@ -37,6 +37,9 @@
 				<td> <?php echo $row['phone'];?></td>
 				<td> <?php echo $row['address'];?></td>
 				<td> <?php echo $row['postcode'];?></td>
+				<td> <a href="edit.php?GetID=<?php echo $row['customerid'];?>">Edit</a>
+					 <a href="delete.php?Del=<?php echo $row['customerid'];?>">Delete</a> </td>
+					
 				</tr>
 			<?php
 			}
