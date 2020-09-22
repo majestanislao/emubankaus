@@ -58,6 +58,7 @@
 			</section>
 </main>
 </body>
+		
 		<br>
 		<br>
 		<center><h4>Connect with us</h4>
