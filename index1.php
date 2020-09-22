@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMU Bank Austrlalia</title>
     <link type="text/css" href="./css/home.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/style.css" rel="stylesheet"/>
     
 </head>
 <body>
@@ -27,6 +27,34 @@
         </nav>
     </header>
     <main>
+	<center>
+	<h1>Quick Balance</h1><br>
+
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="smartaccess">Smart Access:</label><br>
+    
+    <label for="abal">Account balance:</label>
+    <input type="text" id="abal" name="accountbalance" ">
+
+  
+    </select>
+  
+  </form>
+</div><br>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="netbank">Net Bank Saver:</label><br>
+    
+    <label for="abal">Account balance:</label><br>
+    <input type="text" id="abal" name="accountbalance" ">
+</div>
+  
+    </select><br>
+	
+	
         <section class="presentation">
             <div class="introduction">
                 <div class="info-text">
