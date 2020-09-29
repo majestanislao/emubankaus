@@ -10,17 +10,17 @@
 <body>
     <header>
         <div class "emu">
-		<a href="index.html"><img class="logo" src="Images/emu.png" alt="logo"></a>
+		<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
 		</div>
 		<nav>
             <ul class="nav-links">
-                <li><a href="details.html">Account Details</a></li>
-                <li><a href="transfer.html">Transfer Money</a></li>
-                <li><a href="deposit.html">Deposit Cash</a></li>
-				<li><a href="withdraw.html">Withdraw Cash</a></li>
-				<li><a href="transactions.html">Transactions</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-				<li><a class= "logout" href="logout.html">Log Out</a></li>
+                <li><a href="details.php">Account Details</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="deposit.php">Deposit Cash</a></li>
+				<li><a href="withdraw.php">Withdraw Cash</a></li>
+				<li><a href="transactions.php">Transactions</a></li>
+                <li><a href="faqs.php">FAQs</a></li>
+				<li><a class= "logout" href="logout.php">Log Out</a></li>
 			</ul>
         </nav>
     </header>

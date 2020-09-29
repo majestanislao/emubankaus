@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Emu Bank of Australia</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="./css/styles.css" rel="stylesheet"/>
-</head>
-
-<body>
-    <header>
-        <div class "emu">
-		<a href="index.html"><img class="logo" src="/Images/emu.png" alt="logo"></a>
-		</div>
-		<nav>
-            <ul class="nav-links">
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-                <li><a href="withdraw.php">Withdraw Cash</a></li>
-                <li><a href="cardsettings.php">Card Settings</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-                <li><a class= "logout" href="logout.html"><button>Log Out</button></a></li>
-			</ul>
-        </nav>
-    </header>
 	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/transfer.css" rel="stylesheet"/>
+	<title>Transfer Money</title>
+	<?php
+	include 'header.php';
+	?>
+</head>
+<body>
 	<div class="container">
 	<div style="text-align:center">
 		<h2>Transfer Money</h2>
 	</div>
 	<div class="row">
     <div class="column">
-    <img src="/Images/transfer.jpg" style="width:100%">
+    <img src="Images/transfer.jpg" style="width:100%">
     </div>
 	
     <div class="column">
@@ -40,7 +27,6 @@
         <select id="From" name="From">
         <option value="select">Select an account : </option>
 		<option value="daily">Daily Savings 012345</option>
-		<option value="Growth">GrowthSavings 3122345</option>
         </select>
         
         <label for="to">To</label>

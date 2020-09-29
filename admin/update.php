@@ -23,13 +23,19 @@ if (isset ($_POST['update']))
 	$postcode = $_POST['postcode'];
 
 //data insert into database
-	$sql = 	"UPDATE customers SET firstname = '".$firstname."', lastname = '".$lastname."', gender = '".$gender."', phone = '".$phone."', address = '".$address."', postcode = '".$postcode."' WHERE customerid = $customerid";
+	$sql = 	"UPDATE customers SET firstname = '{$firstname}', 
+								  lastname = '{$lastname}', 
+								  gender = '{$gender}', 
+								  phone = '{$phone}', 
+								  address = '{$address}', 
+								  postcode = '{$postcode}' 
+			WHERE customerid = $customerid";
 	$result = mysqli_query($con,$sql);
 
 	if ($result)
 // if database is not connected or query is not executed, display error				
 	{
-		header("location:customerdetails.php");
+		header("location:customerdetails.php?GetID=$customerid");
 	}
 	else
 // if sql query is executed

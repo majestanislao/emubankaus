@@ -11,6 +11,35 @@ function alert($msg)
 // creating database connection				
 $con = mysqli_connect('localhost', 'root', '', 'emubank');
 
+
+//when login button is clicked
+if (isset($_POST['login']))
+	{
+//getting entered data
+		$_SESSION['customerid'] = mysqli_real_escape_string($con,$_POST['customerid']);
+		$_SESSION['password'] = mysqli_real_escape_string($con,$_POST['password']);
+			
+//if customer ID and password is filled
+		if ($_SESSION['customerid']!="" && $_SESSION['customerid']!="")
+//validating the data from database
+		{
+			$sql = "SELECT customerid FROM customers WHERE customerid = '{$_SESSION['customerid']}' and password = '{$_SESSION['password']}'";
+			$result = mysqli_query($con,$sql);
+								
+				if ($count = mysqli_num_rows($result) > 0)	
+				{
+					$_SESSION['loggedin']='1';
+					include('index.php');
+					header("location:index.php?GetID={$_SESSION['customerid']}");
+				}
+					else
+				{
+					$loginerror = "CustomerID and Password do not match";
+					alert($loginerror);
+				}
+		}
+	}
+
 // The below code will be executed when user try to submit the data
 if (isset ($_POST['register']))
 // getting data 
@@ -45,6 +74,7 @@ if (isset ($_POST['register']))
 //data insert into database
 					$sql = 	"INSERT INTO customers (firstname, lastname, gender, emailid, phone, address, postcode, password) 
 							VALUES ('$firstname', '$lastname', '$gender', '$emailid', '$phone', '$address', '$postcode', '$password')";
+					
 		
 					if (!mysqli_query($con,$sql))
 // if database is not connected or query is not executed, display error				
@@ -71,31 +101,7 @@ if (isset ($_POST['register']))
 					}
 		}
 
-//when login button is clicked
-if (isset($_POST['login']))
-	{
-//getting entered data
-		$customerid = mysqli_real_escape_string($con,$_POST['customerid']);
-		$password = mysqli_real_escape_string($con,$_POST['password']);
-			
-//if customer ID and password is filled
-		if ($customerid!="" && $password!="")
-//validating the data from database
-		{
-			$sql = "SELECT customerid FROM customers WHERE customerid = '$customerid' and password = '$password'";
-			$result = mysqli_query($con,$sql);
-								
-				if ($count = mysqli_num_rows($result) > 0)	
-				{
-					header('location:index.php');
-				}
-					else
-				{
-					$loginerror = "CustomerID and Password do not match";
-					alert($loginerror);
-				}
-			}
-		}
+
 
 
 ?>

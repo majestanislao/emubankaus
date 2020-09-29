@@ -49,9 +49,24 @@
 </div>
 <div class="inputfield">		
 	<label>Gender:</label>
-	<input type="radio" id= "gender" name="gender" required value="male"> Male
+	<?php
+	if ($gender == "male")
+	{
+	?>
+	<input type="radio" id= "gender" name="gender" required value="male" checked> Male
 	<input type="radio" id= "gender" name="gender" required value="female"> Female<br>	
 	</div>
+	<?php
+	}
+	elseif ($gender == "female")
+	{
+	?>
+	<input type="radio" id= "gender" name="gender" required value="male"> Male
+	<input type="radio" id= "gender" name="gender" required value="female" checked> Female<br>	
+	</div>
+	<?php
+	}
+	?>
 <br>
 <div class="inputfield">
 	<label>Phone: (Enter 10 Digit Phone Number) </label>

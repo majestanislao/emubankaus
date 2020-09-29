@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Withdraw Cash</title>
-	<link type="text/css" href="./css/withdraw.css" rel="stylesheet"/>
-
+	<link rel="stylesheet" href="./css/deposit.css" rel="stylesheet"/>
+	<title>Deposit Cash</title>
+	 
 </head>
 <body>
     <header>
         <div class "emu">
-		<a href="index.html"><img class="logo" src="Images/emu.png" alt="logo"></a>
+		<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
 		</div>
 		<nav>
              <ul class="nav-links">
-                <li><a href="details.html">Account Details</a></li>
-                <li><a href="transfer.html">Transfer Money</a></li>
-                <li><a href="deposit.html">Deposit Cash</a></li>
-				<li><a href="withdraw.html">Withdraw Cash</a></li>
-				<li><a href="transactions.html">Transactions</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-				<li><a class= "logout" href="logout.html">Log Out</a></li>
+                <li><a href="details.php">Account Details</a></li>
+                <li><a href="transfer.php">Transfer Money</a></li>
+                <li><a href="deposit.php">Deposit Cash</a></li>
+				<li><a href="withdraw.php">Withdraw Cash</a></li>
+				<li><a href="transactions.php">Transactions</a></li>
+                <li><a href="faqs.php">FAQs</a></li>
+				<li><a class= "logout" href="logout.php">Log Out</a></li>
 			</ul>
         </nav>
     </header>
-	
+		
 		<div class="container">
 		<div style="text-align:center">
-		<h2>Withdraw Cash</h2>
+		<h2>Deposit Cash</h2>
 		</div>
 		<div class="row">
 		<div class="column">
-		<img src="Images/deposit.png" style="width:90%">
+		<img src="Images/deposit.png" style="width:100%">
 		</div>
 	
 		<div class="column">
 		<form action="/action_page.php">
       
-        <label for="From">Withdraw Cash to</label>
+        <label for="From">Deposit cash to</label>
         <select id="From" name="From">
         <option value="select">Select an account : </option>
 		<option value="daily">Daily Savings 012345</option>
@@ -49,15 +49,15 @@
 		<label for="desc">Description</label>
 		<input type="text"  id="desc" name="desc" placeholder="Optional">    
 
-
-		<input type="submit" value="Withdraw">
+       
+		<input type="submit" value="Deposit">
 		<input type="submit" value="Cancel">
 		
-     </form>
+      </form>
     </div>
   </div>
 </div>
-
+	
 		<br>
 		<br>
 		<center><h4>Connect with us</h4>
@@ -68,6 +68,6 @@
 		<br>
 		&copy; Copyright 2020. All Rights Reserved.<br>
 		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
- 
+</form>
 </body>
 </html>

@@ -1,32 +1,59 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="./css/style.css" rel="stylesheet"/>
-    <link type="text/css" href="./css/home.css" rel="stylesheet"/>
-	<title>EMU Bank Austrlalia</title>
-	
+    <?php
+		include 'header.php';
+	?>
+	<link type="text/css" href="./css/style.css" rel="stylesheet"/>
+    <title>EMU Bank Austrlalia</title>
 </head>
 <body>
-    <header>
-        <div class "emu">
-		<a href="index.html"><img class="logo" src="Images/emu.png" alt="logo"></a>
-		</div>
-		<nav>
-            <ul class="nav-links">
-                <li><a href="details.html">Account Details</a></li>
-                <li><a href="transfer.html">Transfer Money</a></li>
-                <li><a href="deposit.html">Deposit Cash</a></li>
-				<li><a href="withdraw.html">Withdraw Cash</a></li>
-				<li><a href="transactions.html">Transactions</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-				<li><a class= "logout" href="logout.html">Log Out</a></li>
-			</ul>
-        </nav>
-    </header>
+	<?php
+		if(isset($_SESSION['validate']))
+		{
+			while($row = mysqli_fetch_assoc($result))
+			{
+				$firstname = $row['firstname'];
+				$lastname = $row['lastname'];
+			}
+			$query = "select *from accounts where customerid = '".$customerid."'";
+			$result1 = mysqli_query($con, $query);
+			if ($result1)
+			{
+				while($cbal = mysqli_fetch_assoc($result1))
+				{
+					$bsbno = $cbal['bsbno'];
+					$accountno = $cbal['accountno'];
+					$balance = $cbal['balance'];
+				}
+			}
+			
+	?>
+			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
+			<h3> Current Balance </h3><br>
+			<table width="110%">
+			<thead align="center">
+			<tr>
+			  <td>BSB</td>
+			  <td>ACCOUNT NUMBER</td>
+			  <td>ACCOUNT BALANCE</td>
+			</tr>
+			<tr>
+				<td><?php echo $bsbno;?></td>
+				<td><?php echo $accountno;?></td>
+				<td><?php echo "$ ", $balance;?></td>
+			</tr>
+			</thead>
+			</table>
+			
+	<?php
+		}
+	?>
     <main>
+	
         <section class="presentation">
             <div class="introduction">
                 <div class="info-text">
@@ -38,13 +65,13 @@
                 </div>
             </div>
             <div class="cover">
-                <img src="/Images/loan.jpg" alt="homeloan">
+                <img src="./Images/loan.jpg" alt="homeloan">
             </div>
 
         </section>
         <section class="presentation1">
             <div class="cover1">
-                <img src="/Images/credit.jpg" alt="credit">
+                <img src="./Images/credit.jpg" alt="credit">
             </div>
             <div class="introduction1">
                 <div class="info-text1">

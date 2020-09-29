@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="/Images/emu.png" alt="logo"></a>
+        <a href="index.php"><img class="logo" src="/Images/emu.png" alt="logo"></a>
 		<nav>
             <ul class="nav-links">
                 <li><a href="details.php">Account Details</a></li>
