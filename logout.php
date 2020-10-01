@@ -8,13 +8,9 @@
 		<link type="text/css" href="./css/login.css" rel="stylesheet"/>
 		<?php
 		include "dbconnection.php";
+		include 'header.php';
 		?>	
 	</head>
-	<header>	
-		 <div class "emu">
-		<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
-		</div>
-	</header>
 <body>
 	<div class="form">
 	<h2>Thank you for doing business with Emubank Australia! You are successfully logged out.</h2>
@@ -22,18 +18,8 @@
 <main>
 	<h1> Login to Internet Banking? <a href="login.php"> Click here </a></h1>
 	</div>
-		
+<?php
+	include 'footer.php';
+?>
 </body>
-		<hr style="width:50%">
-		<br>
-		<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
-
-
 </html>

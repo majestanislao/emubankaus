@@ -5,25 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" href="./css/faqs.css" rel="stylesheet"/>
 	<title>Frequently Asked Questions</title>
-	
+<?php
+	include 'header.php';	
+?>
 </head>
 <body>
-    <header>
-        <div class "emu">
-		<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
-		</div>
-		<nav>
-            <ul class="nav-links">
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-				<li><a href="withdraw.php">Withdraw Cash</a></li>
-				<li><a href="transactions.php">Transactions</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-				<li><a class= "logout" href="logout.php">Log Out</a></li>
-			</ul>
-        </nav>
-    </header>
     <h1>Frequently Asked Questions</h1>
     <div class="accordion">
         <div>
@@ -98,17 +84,8 @@
             </div>
         </div>
     </div>
+<?php
+	include 'footer.php';
+?>
 </body>
-
-		<br>
-		<br>
-		<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
-	 
 </html>

@@ -1,68 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-li, a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: black;
-	letter-spacing: -1px
-}
-
-body {
-    background: mintcream;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 5%;
-    background: lightsteelblue;
-}
-
-.logo {
-    cursor: pointer;
-}
-
-.nav-links li {
-    display: inline-block;
-    padding: 0px 20px;
-    background: lightsteelblue;
-}
-
-.nav-links li {
-    display: inline-block;
-    padding: 0px 10px;
-    background: lightsteelblue;
-}
-
-.nav-links li a:hover {
-    color: dodgerblue;
-}
-
-/* emu bank logo position */
-. emu{
-    position: relative;
-}
-
-/* Styles */
-input[type=text], select {
-  width: 150%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=text] {
+/* Styling description input fields */
+input[type=text] 
+{
   width: 75%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -70,8 +10,9 @@ input[type=text] {
   margin-bottom: 16px;
   resize: vertical;
 }
-
-input[type=tel] {
+/* Styling bsb and account number input fields */
+input[type=tel] 
+{
   width: 75%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -79,8 +20,9 @@ input[type=tel] {
   margin-bottom: 16px;
   resize: vertical;
 }
-
-input[type=number] {
+/* Styling amount input field */
+input[type=number] 
+{
   width: 75%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -88,9 +30,9 @@ input[type=number] {
   margin-bottom: 16px;
   resize: vertical;
 }
-
 /*withdraw and cancel button styles*/
-input[type=submit] {
+button[type=submit] 
+{
   width: 15%;
   background-color: dodgerblue;
   color: white;
@@ -101,21 +43,24 @@ input[type=submit] {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
 }
-
-input[type=Submit]:hover {
+/* Styling on mouse over submit button change the color */
+button[type=Submit]:hover 
+{
   background-color: lightsteelblue;
   font-family: 'Poppins', sans-serif;
 }
 
 /* Styles in the container*/
-.container1 {
+.container1 
+{
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
 }
 
 /* two columns that floats next to eachother */
-.column {
+.column 
+{
   float: left;
   width: 50%;
   margin-top: 6px;
@@ -123,15 +68,19 @@ input[type=Submit]:hover {
 }
 
 /* Clear floats after the columns */
-.row:after {
+.row:after 
+{
   content: "";
   display: table;
   clear: both;
 }
 
-/* responsive layout - when screen is less than 600px wide, it will make the two columns stack on top of each other not next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=Submit] {
+/@media screen and (max-width: 600px) {
+  .column, input[type=Withdraw] {
+    width: 100%;
+    margin-top: 0;
+  }
+  .column, input[type=Cancel] {
     width: 100%;
     margin-top: 0;
   }

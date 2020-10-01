@@ -1,13 +1,14 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
 		include 'header.php';
 	?>
-	<link type="text/css" href="./css/style.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="./css/home.css" rel="stylesheet"/>
     <title>EMU Bank Austrlalia</title>
 </head>
 <body>
@@ -36,19 +37,17 @@ session_start();
 				?>
 				<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
 				<h3> Current Balance </h3><br>
-				<table width="110%">
-					<thead align="center">
+				<table>
 						<tr>
-							<td>BSB</td>
-							<td>ACCOUNT NUMBER</td>
-							<td>ACCOUNT BALANCE</td>
+							<th>BSB</th>
+							<th>ACCOUNT NUMBER</th>
+							<th>ACCOUNT BALANCE</th>
 						</tr>
 						<tr>
 							<td><?php echo $bsbno;?></td>
 							<td><?php echo $accountno;?></td>
 							<td><?php echo "$ ", $balance;?></td>
 						</tr>
-					</thead>
 				</table>
 			<?php
 				}
@@ -58,13 +57,10 @@ session_start();
 				}
 			}
 			?>
-			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
-					
-			
+			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>	
 	<?php
 		}
 	?>
-
     <main>
 	
         <section class="presentation">
@@ -97,15 +93,8 @@ session_start();
             </div>
 			</section>
 </main>
+<?php
+	include 'footer.php';
+?>
 </body>
-		<br>
-		<br>
-		<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
 </html>

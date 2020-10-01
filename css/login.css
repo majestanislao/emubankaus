@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @charset "utf-8";
-/* CSS Document */
 . emu{
     position: relative;
 }
@@ -71,10 +70,6 @@ body{
     text-decoration: none;
     background: lightsteelblue;
 }
-
-input[type=submit]:hover {
-	background-color: white;
-	}
 .nav-links li a:hover {
     color: dodgerblue;
 	}
@@ -91,6 +86,9 @@ input[type=submit]:hover {
 	text-align: center;
 	font-size : 14px;
 }
+input[type=submit]:hover {
+	background-color: white;
+	}
 	.customer {
 	margin: 0 auto;
 	width: 400px;
@@ -132,9 +130,7 @@ button:hover {
 	font-size: 14px;
 	text-align: center;
 	}
-
-
-	.form-inline button {
+.form-inline button {
   padding: 10px 20px;
   width: 102%;
   background-color: #2980B9;

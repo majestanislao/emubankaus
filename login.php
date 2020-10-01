@@ -35,19 +35,6 @@
 <main>
 			<h1>First time here?</h1>
 			<h2><a href="register.php">Join Emu Bank now</a> Register for free </h2>
-
 </main>
 </body>
-		<hr style="width:50%">
-		<br>
-		<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
-
-
 </html>

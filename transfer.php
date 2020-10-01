@@ -47,7 +47,7 @@ if(isset($_SESSION['validate']))
 	 ?>
 		<form name="transferform" action="transfer.php?GetID=<?php echo $customerid;?>" method = "POST">
 			 <div class="inputfield">		
-				<label>Select an account:</label><br>
+				<label>Select an account:</label><br><br>
 				<input type="radio" id= "accountno" name="accountno" 
 				required value="<?php echo $bsbno, " ", $accountno;?>" checked> Savings Account <?php echo $bsbno, " ", $accountno;?>
 			</div>
@@ -60,7 +60,7 @@ if(isset($_SESSION['validate']))
 			<label for="amount">Amount</label><br>
 			<input type="number" id="amount" name="amount" placeholder="Enter an amount e.g. 125.00" step=".01" required> <br>
 				
-			<label for="description">Description</label>
+			<label for="description">Description</label><br>
 			<input type="text"  id="description" name="description" placeholder="Enter a Description" required>    
 
 			<center><button type="Submit" class="transferbtn" name="transferbtn">Transfer</button> </center>
@@ -142,20 +142,10 @@ if (isset($_POST['transferbtn']))
 	</div>
   </div>
 </div>
-	
-		<br>
-		<br>
-		<center><h4>Connect with us</h4>
-		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>
-		<a href= "http://wwww.twitter.com"><img src="FONTAWSOME\twitter-square.svg" width="50"></a>
-		<a href= "http://wwww.instagram.com"><img src="FONTAWSOME\instagram.svg" width="50"></a>
-		<br>
-		<br>
-		&copy; Copyright 2020. All Rights Reserved.<br>
-		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
-	 
-	  
-</body>
 
+</body>
+<?php
+	include 'footer.php';
+?>
 </html>
 	

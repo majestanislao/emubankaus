@@ -1,61 +1,89 @@
-@@ -1,100 +0,0 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @charset "utf-8";
 /* CSS Document */
-. emu{
+.emu
+{
     position: relative;
 }
-.form{
+box-sizing: border-box; 
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.over-img
+{
+    position: left;
+    top: 80%;
+    left: 20%;
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.top-left 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+li, a 
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+}
+.form
+{
 	max-width: 500px;
 	width: 100%;
 	background: lightsteelblue;
 	margin: 20px auto;
 	padding: 30px;
 }
-body{
+header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    background: lightsteelblue;
+}
+body
+{
 	background: mintcream;
 }
-	input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 6px;
-  margin-bottom: 16px;
-  font-family: Arial;
+.logo 
+{
+    cursor: pointer;
 }
-input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 6px;
-  margin-bottom: 16px;
-  font-family: Arial;
+.form
+{
+	max-width: 500px;
+	width: 100%;
+	background: lightsteelblue;
+	margin: 20px auto;
+	padding: 30px;
 }
-
-input[type=email] {
-  width: 100%;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 6px;
-  margin-bottom: 16px;
-  font-family: Arial;
-}	
-input[type=tel] {
-  width: 100%;
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 6px;
-  margin-bottom: 16px;
-  font-family: Arial;
-}	
-.form .elements .inputfield .textarea{
+body
+{
+	background: mintcream;
+}
+input[type=text], [type=password],[type=email],[type=tel] 
+{
+	 width: 100%;
+	 padding: 12px 20px;
+	 border: 1px solid #ccc;
+	 border-radius: 4px;
+	 box-sizing: border-box;
+	 margin: 6px;
+	 margin-bottom: 16px;
+	 font-family: Arial;
+}
+.form .elements .inputfield .textarea
+{
 	position: relative;
 	resize: none;
 	height: 80px;
@@ -67,12 +95,14 @@ input[type=tel] {
 	margin-bottom: 16px;
 	font-family: Arial;
 }
-.form .elements .inputfield .selectone{
+.form .elements .inputfield .selectone
+{
 	position: relative;
 	height: 37px;
 	width: 100%;
 }
-.form .elements .inputfield .selectone select{
+.form .elements .inputfield .selectone select
+{
 	-webkit-appearance: none;
 	appearance: none;
 	position: relative;
@@ -86,31 +116,37 @@ input[type=tel] {
 	margin-bottom: 16px;
 	font-family: Arial;;
 }
-	input[type=submit]:hover {
+	input[type=submit]:hover 
+{
 	background-color: white;
 	
 }
-	.elements {
+	.elements 
+{
 	margin: 0 auto;
 	width: 400px;
 	font-family: Arial;
 }
-	body h2 {
+	body h2 
+{
 	text-align: center;
 	font-family: Arial;
 }
-	main h1 {
+	main h1 
+{
 	font-family: Arial;
 	font-size: 15px;
 	text-align: center;
 }
-	main h2 {
+	main h2 
+{
 	font-family: Arial;
 	font-size: 12px;
 	text-align: center;
 }
 
-	.elements button {
+	.elements button 
+{
   padding: 10px 20px;
   width: 102%;
   background-color: #2980B9;
@@ -118,5 +154,4 @@ input[type=tel] {
   border-radius: 5px;
   box-sizing: border-box;
   color: white;
-  
  }

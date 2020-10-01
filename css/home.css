@@ -1,4 +1,41 @@
-.presentation, .presentation1 {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/* Styling home page */
+
+/* setting border and aligning text for quick balance table */
+table, td, th 
+{  
+  border: 1px solid #ddd;
+  text-align: left;
+  text-align: center;
+}
+table 
+{
+  border-collapse: collapse;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+th, td 
+{
+  padding: 15px;
+}
+/* Aligning h3*/
+h3 
+{
+	margin: 10;
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
+	text-align: center;
+}
+h2
+{
+	margin: 10;
+	font-family: 'Poppins', sans-serif;
+	font-size: 25px;
+}
+/* padding for table heading and data */
+.presentation, .presentation1 
+{
     background: mintcream;
     display: flex;
     width: 90%;
@@ -9,31 +46,37 @@
     border: 3px solid black;
 }
 
-.info-text p, .info-text1 p {
+.info-text p, .info-text1 p 
+{
     padding: 30px 10%; 
 }
 
-.info-text h1, .info-text1 h1 {
+.info-text h1, .info-text1 h1 
+{
    font-size: 44px;
     font-weight: 500;
 }
 
-.cta, .cta1 {
+.cta, .cta1 
+{
     padding: 30px 10%;
 }
 
-.cover img, .cover1 img {
+.cover img, .cover1 img 
+{
     width: 100%;
     height: auto;
     max-width: 100vh;
     padding: 30px 10%;
 }
 
-.introduction, .introduction1 {
+.introduction, .introduction1 
+{
     flex: auto;
 }
 
-.apply-inquire, .apply-inquire1 {
+.apply-inquire, .apply-inquire1 
+{
     border: 2px solid lightsteelblue;
     background: transparent;
     color: black;
@@ -41,7 +84,8 @@
     height: 50px;
     cursor: pointer;
 }
-h4 {
+h4 
+{
 	margin: 10;
 	font-family: 'Poppins', sans-serif;
 	font-size: 25px;
@@ -49,7 +93,8 @@ h4 {
 }
 
 /* Style inputs */
-input[type=text], select {
+input[type=text], select 
+{
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -58,7 +103,8 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-  Div.container {
+  Div.container 
+ {
   width:400px;
   border-radius: 5px;
   background-color: #f2f2f2;

@@ -1,4 +1,22 @@
-.table
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/* Styling account details page */
+
+/* setting border and aligning text for quick balance table */
+table, td, th 
+{  
+  border: 1px solid #ddd;
+  text-align: left;
+  text-align: center;
+}
+/* setting table margins*/
+table 
 {
-	
+  border-collapse: collapse;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+th, td 
+{
+  padding: 15px;
 }
