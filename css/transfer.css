@@ -54,13 +54,41 @@ header {
 
 /* Styles */
 input[type=text], select {
-  width: 100%;
+  width: 150%;
   padding: 12px;
   border: 1px solid #ccc;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
 }
+
+input[type=text] {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=tel] {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=number] {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
 /*withdraw and cancel button styles*/
 input[type=submit] {
   width: 15%;
@@ -80,7 +108,7 @@ input[type=Submit]:hover {
 }
 
 /* Styles in the container*/
-.container {
+.container1 {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;

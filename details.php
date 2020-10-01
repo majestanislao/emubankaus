@@ -18,8 +18,8 @@ session_start();
 <div class="bg-img">
 <?php
 if(isset($_SESSION['validate']))
-{
-	while($row = mysqli_fetch_assoc($result))
+		{
+			while($row = mysqli_fetch_assoc($result))
 			{
 				$firstname = $row['firstname'];
 				$lastname = $row['lastname'];
@@ -27,35 +27,46 @@ if(isset($_SESSION['validate']))
 				$emailid = $row['emailid'];
 				$phone = $row['phone'];
 				$address = $row['address'];
-				$postcode = $row['postcode'];			
+				$postcode = $row['postcode'];
 			}
 			$query = "select *from accounts where customerid = '".$customerid."'";
 			$result1 = mysqli_query($con, $query);
 			if ($result1)
 			{
+				
 				while($cbal = mysqli_fetch_assoc($result1))
 				{
 					$bsbno = $cbal['bsbno'];
 					$accountno = $cbal['accountno'];
 					$balance = $cbal['balance'];
 				}
+				if (isset($bsbno))
+				{
+				?>
+				<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
+				<h2>Account Details</h2> <br>
+				<table width="110%">
+					<thead align="center">
+						<tr>
+							<td>BSB</td>
+							<td>ACCOUNT NUMBER</td>
+							<td>ACCOUNT BALANCE</td>
+						</tr>
+						<tr>
+							<td><?php echo $bsbno;?></td>
+							<td><?php echo $accountno;?></td>
+							<td><?php echo "$ ", $balance;?></td>
+						</tr>
+					</thead>
+				</table>
+			<?php
+				}
+				else
+				{
+					echo "your account has not been created yet. Please contact Bank";
+				}
 			}
-?>	
-	<h2>Account Details</h2> 
-		<table style="width:100%">
-			<tr>
-				<td>BSB</td>
-				<td>ACCOUNT NUMBER</td>
-				<td>ACCOUNT BALANCE</td>
-			</tr>
-			<tr>
-				<td><?php echo $bsbno;?></td>
-				<td><?php echo $accountno;?></td>
-				<td><?php echo "$ ", $balance;?></td>
-			</tr>
-		</table>
-</div>
-	  
+			?> 
 <br>
 <h2> Personal Details </h2>
 <!--creating table headings for customer details -->
