@@ -1,64 +1,117 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+	
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/deposit.css" rel="stylesheet"/>
-	<title>Deposit Cash</title>
-	 
+	<link rel="stylesheet" href="./css/transfer.css" rel="stylesheet"/>
+	<title>Deposit Money</title>
+	<?php
+		include 'header.php';
+	?>
 </head>
 <body>
-    <header>
-        <div class "emu">
-		<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
-		</div>
-		<nav>
-             <ul class="nav-links">
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-				<li><a href="withdraw.php">Withdraw Cash</a></li>
-				<li><a href="transactions.php">Transactions</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-				<li><a class= "logout" href="logout.php">Log Out</a></li>
-			</ul>
-        </nav>
-    </header>
-		
-		<div class="container">
+<?php
+if(isset($_SESSION['validate']))
+{
+	$query = "select *from accounts where customerid = '".$customerid."'";
+	$result1 = mysqli_query($con, $query);
+		if ($result1)
+		{
+			while($cbal = mysqli_fetch_assoc($result1))
+			{
+				$bsbno = $cbal['bsbno'];
+				$accountno = $cbal['accountno'];
+				$balance = $cbal['balance'];
+			}
+		}
+?>
+    <div class="container3">
 		<div style="text-align:center">
-		<h2>Deposit Cash</h2>
+			<h2>Deposit Cash</h2>
 		</div>
 		<div class="row">
-		<div class="column">
-		<img src="Images/deposit.png" style="width:100%">
-		</div>
+			<div class="column">
+			<img src="Images/deposit.png" style="width:100%">
+			</div>
 	
-		<div class="column">
-		<form action="/action_page.php">
-      
-        <label for="From">Deposit cash to</label>
-        <select id="From" name="From">
-        <option value="select">Select an account : </option>
-		<option value="daily">Daily Savings 012345</option>
-        </select>
-      
-		<label for="amount">Amount</label>
-		<input type="text" placeholder="Enter Amount" id="amount" name="amount" required>
-			
-		<label for="desc">Description</label>
-		<input type="text"  id="desc" name="desc" placeholder="Optional">    
+			<div class="column">
+     <?php 
+	 if (isset($accountno))
+	 {
+	 ?>
+			<form name="depositform" action="deposit.php?GetID=<?php echo $customerid;?>" method = "POST">
+				 		
+				<div class="inputfield">		
+				<label>Select an account:</label><br>
+				<input type="radio" id= "accountno" name="accountno" 
+				required value="<?php echo $bsbno, " ", $accountno;?>" checked> Savings Account <?php echo $bsbno, " ", $accountno;?>
+				</div>
+				<br>
+				
+				<label for="amount">Amount</label><br>
+				<input type="number" id="amount" name="amount" placeholder="Enter an amount e.g. 125.00" step=".01" required> <br>
+					
+				<label for="description">Description</label>
+				<input type="text"  id="description" name="description" placeholder="Enter a Description e.g. Deposit" required>    
 
-       
-		<input type="submit" value="Deposit">
-		<input type="submit" value="Cancel">
-		
-      </form>
-    </div>
-  </div>
-</div>
+				<center><button type="Submit" class="depositbtn" name="depositbtn">Deposit</button> </center>
+			</form>
+			</div>
+		</div>
+	</div>
+    <?php
+	 }
+	 else
+	 {
+		echo "your account has not been created yet. Please contact Bank";
+	 }
+}
+else
+{
+	echo "Please log in to access your details";
+}
+?>
+
+<?php
+// Creating a function "alert" in PHP
+function alert($msg) 
+{
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+	return false;
+}
+$con = mysqli_connect('localhost', 'root', '', 'emubank');
+
+//when submit button is clicked
+if (isset($_POST['depositbtn']))
+{
+	$amount = $_POST['amount'];
+	$description = $_POST['description'];
 	
-		<br>
+	$debitaccountbal = $balance + $amount;
+	$query3 = 	"INSERT INTO transactions (amount, description, debitaccountno, debitaccountbal) 
+				VALUES ('$amount', '$description', '$accountno', '$debitaccountbal')";
+	$query4 =  "UPDATE accounts SET balance = '{$debitaccountbal}' WHERE accountno = $accountno";
+	
+	if (!mysqli_query($con,$query3) || !mysqli_query($con,$query4))
+// if database is not connected or query is not executed, display error				
+	{
+		$dberrormsg = "Error in connecting the database, please try again";
+		alert($dberrormsg);
+	}
+	else
+	{
+		$successmsg = "Transcation Successful";
+		alert($successmsg);
+	}
+}
+?>
+	
+      	<br>
 		<br>
 		<center><h4>Connect with us</h4>
 		<a href= "http://www.facebook.com"><img src="FONTAWSOME\facebook-square.svg" width="50"></a>

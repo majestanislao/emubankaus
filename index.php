@@ -11,6 +11,7 @@ session_start();
     <title>EMU Bank Austrlalia</title>
 </head>
 <body>
+
 	<?php
 		if(isset($_SESSION['validate']))
 		{
@@ -23,35 +24,47 @@ session_start();
 			$result1 = mysqli_query($con, $query);
 			if ($result1)
 			{
+				
 				while($cbal = mysqli_fetch_assoc($result1))
 				{
 					$bsbno = $cbal['bsbno'];
 					$accountno = $cbal['accountno'];
 					$balance = $cbal['balance'];
 				}
+				if (isset($bsbno))
+				{
+				?>
+				<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
+				<h3> Current Balance </h3><br>
+				<table width="110%">
+					<thead align="center">
+						<tr>
+							<td>BSB</td>
+							<td>ACCOUNT NUMBER</td>
+							<td>ACCOUNT BALANCE</td>
+						</tr>
+						<tr>
+							<td><?php echo $bsbno;?></td>
+							<td><?php echo $accountno;?></td>
+							<td><?php echo "$ ", $balance;?></td>
+						</tr>
+					</thead>
+				</table>
+			<?php
+				}
+				else
+				{
+					echo "your account has not been created yet. Please contact Bank";
+				}
 			}
-			
-	?>
+			?>
 			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
-			<h3> Current Balance </h3><br>
-			<table width="110%">
-			<thead align="center">
-			<tr>
-			  <td>BSB</td>
-			  <td>ACCOUNT NUMBER</td>
-			  <td>ACCOUNT BALANCE</td>
-			</tr>
-			<tr>
-				<td><?php echo $bsbno;?></td>
-				<td><?php echo $accountno;?></td>
-				<td><?php echo "$ ", $balance;?></td>
-			</tr>
-			</thead>
-			</table>
+					
 			
 	<?php
 		}
 	?>
+
     <main>
 	
         <section class="presentation">

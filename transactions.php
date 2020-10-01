@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,95 +9,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/transactions.css" rel="stylesheet"/>
 	<title>Transaction History</title>
-
+	<?php
+		include 'header.php';
+	?>
 </head>
 <body>
-    <header>
-        <div class "emu">
-		<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
-		</div>
-		<nav>
-            <ul class="nav-links">
-                <li><a href="details.php">Account Details</a></li>
-                <li><a href="transfer.php">Transfer Money</a></li>
-                <li><a href="deposit.php">Deposit Cash</a></li>
-				<li><a href="withdraw.php">Withdraw Cash</a></li>
-				<li><a href="transactions.php">Transactions</a></li>
-                <li><a href="faqs.php">FAQs</a></li>
-				<li><a class= "logout" href="logout.php">Log Out</a></li>
-			</ul>
-        </nav>
-    </header>
-	
-	<div class="container">
-	<div style="text-align:center">
-	<h2>Transaction History</h2>
-	</div>
-	<br>
-	<table id="transactions">
-		  <tr>
-			<th>Date</th>
-			<th>Transaction Details</th>
-			<th>Withdrawal</th>
-			<th>Deposit</th>
-			<th>Balance</th>
-		  </tr>
-		  
-			<tr>
-			<td>15/09/2020</td>
-			<td>INTERNET EXTERNAL TRANSFER Daily Savings 012345 REF NO 06218 </td>
-			<td>$50</td>
-			<td></td>
-			<td>$6,000.00</td>
-			</tr>
-		  
-			<td>08/09/2020</td>
-			<td>OSKO PAYMENT FROM M TORRES REF NO 07819
-			</td>
-			<td></td>
-			<td>$50</td>
-			<td>$6,050.00</td>
-			</tr>
-		  
-			<td>01/09/2020</td>
-			<td>OSKO PAYMENT FROM M ESTANISLAO Savings REF NO 89453 </td>
-			<td></td>
-			<td>$50</td>
-			<td>$6,000.00</td>
-			</tr>
-		  
-			<td>30/08/2020</td>
-			<td>TRANSFER FROM J ENRIQUEZ TO Daily Savings 012345 REF NO 85296
-			</td>
-			<td></td>
-			<td>$100</td>
-			<td>$5,350.00</td>
-			</tr>
+<?php
+if(isset($_SESSION['validate']))
+{
+	$query = "select *from accounts where customerid = '".$customerid."'";
+	$result1 = mysqli_query($con, $query);
+		if ($result1)
+		{
+			while($cbal = mysqli_fetch_assoc($result1))
+			{
+				$accountno = $cbal['accountno'];
+				$balance = $cbal['balance'];
+			}
+		}
+?>
+<?php 
+	 if (isset($accountno))
+	 {
+		$query2 = "select * from transactions where debitaccountno = '$accountno' or creditaccountno = '$accountno'" ;
+		$result2 = mysqli_query($con, $query2);
+		if (mysqli_num_rows($result2) != 0) 
+		{
+?>
+			<div class="container2">
+			<div style="text-align:center">
+					<h2>Transaction History</h2>
+			</div>
+			<br>
+			<table id="transactions">
+				<tr align="center">
+					<th>Date</th>
+					<th>Transaction Details</th>
+					<th>Credit</th>
+					<th>Debit</th>
+					<th>Balance</th>
+				</tr>
+				<tr align="center">
+					<td> </th>
+					<td>Initial Balance</th>
+					<td> </th>
+					<td> </th>
+					<td>$100.00</th>
+				</tr>
+<?php	
+			while($tran = mysqli_fetch_assoc($result2))
+			{
+				if ($accountno == $tran['debitaccountno'])
+				{
+?>
+				
+<!--displaying record in each row-->
+			
+				<tr align="center"> 
+				<td> <?php echo $tran['date'];?></td>
+				<td> <?php echo $tran['description'];?></td>
+				<td> </td>
+				<td> <?php echo "$", $tran['amount'];?></td>
+				<td> <?php echo "$", $tran['debitaccountbal'];?></td>
+				</tr>
 
-			<td>25/08/2020</td>
-			<td>INTERNET EXTERNAL TRANSFER Daily Savings 012345 REF NO 36489 </td>
-			<td>550</td>
-			<td></td>
-			<td>$5,250.00</td>
-			</tr>
-		  
-			<td>18/08/2020</td>
-			<td>TRANSFER FROM Y AYUB TO Daily Savings 012345 REF NO 75342 </td>
-			<td></td>
-			<td>$200</td>
-			<td>$5,800.00</td>
-			</tr>
-		  
-			<td>09/08/2020</td>
-			<td>TRANSFER FROM S ZUON TO Daily Savings 012345 REF NO 95184 </td>
-			<td></td>
-			<td>$600</td>
-			<td>$5,600.00</td>
-			</tr>
-		  
-</table>
-	
-	
+<?php	
+				}
+				elseif ($accountno == $tran['creditaccountno'])
+				{
+?>
+				
+<!--displaying record in each row-->
+			
+				<tr align="center"> 
+				<td> <?php echo $tran['date'];?></td>
+				<td> <?php echo $tran['description'];?></td>
+				<td> <?php echo "$", $tran['amount'];?></td>
+				<td> </td>
+				<td> <?php echo "$", $tran['creditaccountbal'];?></td>
+				</tr>
+			
+<?php		
+				}
+				
+			}
+?>		
+			<tr align="center">
+					<td> </th>
+					<td>Closing Balance</th>
+					<td> </th>
+					<td> </th>
+					<td><?php echo "$", $balance;?></th>
+				</tr>
+			</table>;
+<?php
+		}
+?>
+		
+<?php
+	}
+	else
+	 {
+		echo "your account has not been created yet. Please contact Bank";
+	 }
+}
+else
+{
+	echo "Please log in to access your details";
+}	
+?>	
 		<br>
 		<br>
 		<center><h4>Connect with us</h4>
@@ -104,7 +128,5 @@
 		<br>
 		&copy; Copyright 2020. All Rights Reserved.<br>
 		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
-	 
-	  
 </body>
 </html>

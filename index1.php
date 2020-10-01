@@ -18,6 +18,7 @@
 		<nav>
             <ul class="nav-links">
                 <li><a href="details.php">Account Details</a></li>
+				<li><a href="transactions.html">Transactions</a></li>
                 <li><a href="transfer.php">Transfer Money</a></li>
                 <li><a href="deposit.php">Deposit Cash</a></li>
 				<li><a href="withdraw.php">Withdraw Cash</a></li>
