@@ -12,18 +12,21 @@ session_start();
     <title>EMU Bank Austrlalia</title>
 </head>
 <body>
-
 	<?php
+//if session variable is true i.e. user is logged in
 		if(isset($_SESSION['loggedin']))
 		{
+//fetch user first and last name
 			while($row = mysqli_fetch_assoc($result))
 			{
 				$firstname = $row['firstname'];
 				$lastname = $row['lastname'];
 			}
 	?>
+<!--display Welcome message for logged in customer-->
 			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>	
 	<?php
+//if customer has an account no then display the account number and current balance
 			if (isset($accountno))
 			{
 				?>
@@ -42,6 +45,7 @@ session_start();
 				</table>
 			<?php
 			}
+//if customer doesn't have an account no then display the message.
 			else
 			{
 				echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
@@ -49,7 +53,8 @@ session_start();
 		}
 	?>
     <main>
-	
+
+<!--Display the following in index at all times irrespective of user login status-->
         <section class="presentation">
             <div class="introduction">
                 <div class="info-text">

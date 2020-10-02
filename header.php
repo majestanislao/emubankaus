@@ -25,15 +25,17 @@
 // if user is login in the session then the following code is exceduted
 				if(isset($_SESSION['loggedin']))
 				{
+// customer ID variable created for ease
 					$customerid = $_SESSION['customerid'];
 // Database connection 
 					$con = mysqli_connect('localhost', 'root', '', 'emubank');
 // From the database Select the customer whose customerid is equal to customer id used in login  
 					$sql = "select *from customers where customerid = '".$customerid."'";
 					$result = mysqli_query($con,$sql);
-// creating a new session varaiable "validate", and we will use this varaible in other pages to display specific data of the selected customer.  
+// From the database Select the account whose customerid is equal to customer id used in login  
 					$query = "select *from accounts where customerid = '".$customerid."'";
 					$result1 = mysqli_query($con, $query);
+// if the account exist of loggedin customer fetch the data. Following data is used in other pages. 
 					if ($result1)
 					{
 					while($account = mysqli_fetch_assoc($result1))
@@ -41,13 +43,15 @@
 							$bsbno = $account['bsbno'];
 							$accountno = $account['accountno'];
 							$balance = $account['balance'];
+							$openingbal = $account['openingbal'];
 						}
 					}
 ?>
-				
+<!-- if user logged in, Log out link created with logout parameter in URL -->				
 				<li><a class= "logout" href="logout.php?logout">Log Out</a></li>
 <?php
 				}
+// if user not logged in, Log in link created  
 				else
 				{
 ?>

@@ -1,15 +1,17 @@
 <?php
+//following code is only executed, when user clicked on logout link from header as it given the logout parameter in the URL 
 if (isset($_REQUEST['logout'])) 
 	{
+//session start to get all the session varaibel
 		session_start();
+//session destroy to null all the session varaibles
         session_destroy();
+//redirect to logout.php without any 'logout' parameter in URL to show the below message in HTML code
 		header("location:logout.php");
 	}
 ?>
 
 <!DOCTYPE html>
-
-
 <html lang="en">
 	<head>
 

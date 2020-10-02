@@ -1,9 +1,13 @@
 <?php
 session_start();
+//creating a varaiable for any new register customer id and making it NULL
 $registercustomerid = NULL;
 if (isset($_REQUEST['register'])) 
 	{
+//if someone registered in the session, then make the varaible as the customer id of the new register customer
+//since varaible is only in the URL if a customer is re-directed after registration, it will ensure that at all other time, the variable is NULL
 		$registercustomerid = $_SESSION['lastcustomerid'];
+//display the successful registergation message with the new customer id 
 		$successmsg = "User Registered. Your client id is $registercustomerid";
 		echo "<script type='text/javascript'>alert('$successmsg');</script>";
 	}
@@ -28,12 +32,15 @@ if (isset($_REQUEST['register']))
 		<div class="customer">
 		<form class="form-inline" action="login.php" method = "POST">
 			<label for="customerid">Customer ID </label><br>
-			<?php if($registercustomerid != NULL)
+			<?php 
+			//if someone registered in the session then the registercustomerid will not be null. and value of customer id will be displayed in customer id field
+			if($registercustomerid != NULL)
 			{
 			?>
 			<input type="text" id="customerid" name="customerid" value="<?php echo $registercustomerid;?>" required>
 			<?php
 			}
+			//no customer id value in normal login session
 			else
 			{
 			?>
@@ -77,24 +84,27 @@ $con = mysqli_connect('localhost', 'root', '', 'emubank');
 //when login button is clicked
 if (isset($_POST['login']))
 {
-//getting entered data
+//getting entered data and assigning customer id to a session varaiable
 	$_SESSION['customerid'] = mysqli_real_escape_string($con,$_POST['customerid']);
-	$_SESSION['password'] = mysqli_real_escape_string($con,$_POST['password']);
+	$password = mysqli_real_escape_string($con,$_POST['password']);
 		
 //if customer ID and password is filled
-	if ($_SESSION['customerid']!="" && $_SESSION['customerid']!="")
-//validating the data from database
+	if ($_SESSION['customerid']!="" && $password!="")
+//validating the data from database i.e. customer id and password match with any data in database
 	{
-		$sql = "SELECT customerid FROM customers WHERE customerid = '{$_SESSION['customerid']}' and password = '{$_SESSION['password']}'";
+		$sql = "SELECT customerid FROM customers WHERE customerid = '{$_SESSION['customerid']}' and password = '{$password}'";
 		$result = mysqli_query($con,$sql);
-							
+//if query return any rows			
 			if ($count = mysqli_num_rows($result) > 0)	
 			{
+//creating session varaible logged in and assigning the value of this varaiable as 1 or true
 				$_SESSION['loggedin']='1';
+//relocating to index page in case login is success	
 				header("location:index.php");
 			}
 				else
 			{
+//display error mesage if query return 0 rows
 				$loginerror = "CustomerID and Password do not match";
 				alert($loginerror);
 			}

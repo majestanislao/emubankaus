@@ -5,9 +5,6 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/transfer.css" rel="stylesheet"/>
 	<title>Withdraw Money</title>
 	<?php
@@ -16,6 +13,7 @@ session_start();
 </head>
 <body>
 <?php
+//if session variable is true i.e. user is logged in, following html code is executed to show heading & image
 if(isset($_SESSION['loggedin']))
 {
 ?>
@@ -29,7 +27,8 @@ if(isset($_SESSION['loggedin']))
 			</div>
 	
 			<div class="column">
-     <?php 
+     <?php
+//if customer has an account no then create the following withdraw form
 	 if (isset($accountno))
 	 {
 	 ?>
@@ -52,14 +51,16 @@ if(isset($_SESSION['loggedin']))
 			</form>
 	<?php
 	 }
+//if customer doesn't have an account no then display the message
 	 else
 	 {
 		echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
 	 }
 }
+//if session variable is not true i.e. user is not logged in
 else
 {
-	include 'notloginmessage.php';
+//include the following file to showing login error message.
 }
 ?>
 		</div>
@@ -74,31 +75,40 @@ function alert($msg)
 }
 $con = mysqli_connect('localhost', 'root', '', 'emubank');
 
-//when submit button is clicked
+//when withdraw button is clicked
 if (isset($_POST['withdrawbtn']))
 {
+//assign the varaiables using the user input
 	$amount = $_POST['amount'];
 	$description = $_POST['description'];
+//credit account description is created using the user input
 	$creditaccountdesc = "Cash Withdraw, Detail: ". $description;
+//if withdraw amount is greater than balance
 	if($amount>$balance)
 	{
+//display error that insufficient funds
 		$amounterror = "You do not have sufficient balance";
 		alert($amounterror);
 	}
+//if withdraw amount is lesser than or equal to balance
 	else
 	{
+//amount withdraw is subtracted from current balance and assign to credit account balance
 	$creditaccountbal = $balance - $amount;
+//query to insert the withdraw transcation in the transcations table	
 	$query3 = 	"INSERT INTO transactions (amount, creditaccountdesc, creditaccountno, creditaccountbal) 
 				VALUES ('$amount', '$creditaccountdesc', '$accountno', '$creditaccountbal')";
+//query to update the balance of account with new balance
 	$query4 =  "UPDATE accounts SET balance = '{$creditaccountbal}' WHERE accountno = $accountno";
 	
 		if (!mysqli_query($con,$query3) || !mysqli_query($con,$query4))
-	// if database is not connected or query is not executed, display error				
+// if any of the queries are not executed or database is not connected, display error			
 		{
 			$dberrormsg = "Error in connecting the database, please try again";
 			alert($dberrormsg);
 		}
 		else
+//if both queries are executed, display the success message
 		{
 			$successmsg = "Transcation Successful";
 			alert($successmsg);

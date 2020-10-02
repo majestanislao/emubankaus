@@ -92,9 +92,10 @@ if (isset ($_POST['addaccount']))
 // if sql query is executed
 			{
 //get the last inserted Customer ID
-				$successmsg = "Customer Account Details has been Created. Request customer to login to confirm";
-				alert($successmsg);
-				header("location: customerdetails.php");
+				//$successmsg = "Customer Account Details has been Created. Request customer to login to confirm";
+				//alert($successmsg);
+				
+				header("location: customerdetails.php?");
 			}
 		}
 	}

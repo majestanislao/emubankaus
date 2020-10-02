@@ -1,7 +1,5 @@
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="view port" content="width=device-width, initial scale=1">
 	<title>logged out</title>	
 	<link type="text/css" href="./css/login.css" rel="stylesheet"/>
 </head>

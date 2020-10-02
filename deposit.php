@@ -5,9 +5,6 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/transfer.css" rel="stylesheet"/>
 	<title>Deposit Money</title>
 	<?php
@@ -16,6 +13,7 @@ session_start();
 </head>
 <body>
 <?php
+//if session variable is true i.e. user is logged in, following html code is executed to show heading & image
 if(isset($_SESSION['loggedin']))
 {
 ?>
@@ -30,6 +28,7 @@ if(isset($_SESSION['loggedin']))
 	
 			<div class="column">
      <?php 
+//if customer has an account no then create the following deposit form
 	 if (isset($accountno))
 	 {
 	 ?>
@@ -53,13 +52,16 @@ if(isset($_SESSION['loggedin']))
 		
     <?php
 	 }
+//if customer doesn't have an account no then display the message.
 	 else
 	 {
 		echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
 	 }
 }
+//if session variable is not true i.e. user is not logged in
 else
 {
+//include the following file to showing login error message.
 	include 'notloginmessage.php';
 }
 ?>
@@ -75,24 +77,30 @@ function alert($msg)
 }
 $con = mysqli_connect('localhost', 'root', '', 'emubank');
 
-//when submit button is clicked
+//when deposit button is clicked
 if (isset($_POST['depositbtn']))
 {
+//assign the varaiables using the user input
 	$amount = $_POST['amount'];
 	$description = $_POST['description'];
+//debit account description is created using the user input
 	$debitaccountdesc = "Cash Deposit, Detail: ". $description;
+//debit account balance is equal to current balance + amount deposit
 	$debitaccountbal = $balance + $amount;
+//query to insert the deposit transcation in the transcations table
 	$query3 = 	"INSERT INTO transactions (amount, debitaccountdesc, debitaccountno, debitaccountbal) 
 				VALUES ('$amount', '$debitaccountdesc', '$accountno', '$debitaccountbal')";
+//query to update the balance of account with new balance
 	$query4 =  "UPDATE accounts SET balance = '{$debitaccountbal}' WHERE accountno = $accountno";
 	
 	if (!mysqli_query($con,$query3) || !mysqli_query($con,$query4))
-// if database is not connected or query is not executed, display error				
+// if any of the queries are not executed or database is not connected, display error				
 	{
 		$dberrormsg = "Error in connecting the database, please try again";
 		alert($dberrormsg);
 	}
 	else
+//if both queries are executed, display the success message
 	{
 		$successmsg = "Transcation Successful";
 		alert($successmsg);
