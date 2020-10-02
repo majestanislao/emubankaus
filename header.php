@@ -16,10 +16,10 @@
 			<nav>
 				<ul class="nav-links">			
 					<li><a href="details.php">Account Details</a></li>
+					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="transfer.php">Transfer Money</a></li>
 					<li><a href="deposit.php">Deposit Cash</a></li>
 					<li><a href="withdraw.php">Withdraw Cash</a></li>
-					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="faqs.php">FAQs</a></li>
 <?php
 // if user is login in the session then the following code is exceduted

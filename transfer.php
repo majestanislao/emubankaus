@@ -125,7 +125,6 @@ if (isset($_POST['transferbtn']))
 			$query4 =  "UPDATE accounts SET balance = '{$debitaccountbal}' WHERE accountno = $debitaccountno";
 //query to update the balance of the account of the customer
 			$query5 =  "UPDATE accounts SET balance = '{$creditaccountbal}' WHERE accountno = $accountno";
-			7
 			if (!mysqli_query($con,$query3) || !mysqli_query($con,$query4) || !mysqli_query($con,$query5))
 // if any of the query failed or database connection failed then display error message			
 			{
