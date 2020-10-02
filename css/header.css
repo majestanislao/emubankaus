@@ -50,3 +50,11 @@ header {
 . emu{
     position: relative;
 }
+
+.formlogout{
+	max-width: 500px;
+	width: 100%;
+	background: lightsteelblue;
+	margin: 20px auto;
+	padding: 30px;
+	}

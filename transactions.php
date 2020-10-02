@@ -15,7 +15,7 @@ session_start();
 </head>
 <body>
 <?php
-if(isset($_SESSION['validate']))
+if(isset($_SESSION['loggedin']))
 {
 	$query = "select *from accounts where customerid = '".$customerid."'";
 	$result1 = mysqli_query($con, $query);
@@ -25,6 +25,7 @@ if(isset($_SESSION['validate']))
 			{
 				$accountno = $cbal['accountno'];
 				$balance = $cbal['balance'];
+				$openingbal = $cbal['openingbal'];
 			}
 		}
 ?>
@@ -51,26 +52,27 @@ if(isset($_SESSION['validate']))
 				</tr>
 				<tr align="center">
 					<td> </th>
-					<td>Initial Balance</th>
+					<td>Opening Balance</th>
 					<td> </th>
 					<td> </th>
-					<td>$100.00</th>
+					<td><?php echo "$", $openingbal;?></th>
 				</tr>
 <?php	
 			while($tran = mysqli_fetch_assoc($result2))
 			{
+
 				if ($accountno == $tran['debitaccountno'])
 				{
-?>
-				
+?>				
 <!--displaying record in each row-->
-			
+				
+				
 				<tr align="center"> 
-				<td> <?php echo $tran['date'];?></td>
-				<td> <?php echo $tran['description'];?></td>
-				<td> </td>
-				<td> <?php echo "$", $tran['amount'];?></td>
-				<td> <?php echo "$", $tran['debitaccountbal'];?></td>
+					<td> <?php echo $tran['date'];?></td>
+					<td> <?php echo $tran['debitaccountdesc'];?></td>
+					<td> </td>
+					<td> <?php echo "$", $tran['amount'];?></td>
+					<td> <?php echo "$", $tran['debitaccountbal'];?></td>
 				</tr>
 
 <?php	
@@ -83,7 +85,7 @@ if(isset($_SESSION['validate']))
 			
 				<tr align="center"> 
 				<td> <?php echo $tran['date'];?></td>
-				<td> <?php echo $tran['description'];?></td>
+				<td> <?php echo $tran['creditaccountdesc'];?></td>
 				<td> <?php echo "$", $tran['amount'];?></td>
 				<td> </td>
 				<td> <?php echo "$", $tran['creditaccountbal'];?></td>
@@ -110,12 +112,14 @@ if(isset($_SESSION['validate']))
 	}
 	else
 	 {
-		echo "your account has not been created yet. Please contact Bank";
+		echo "<br>";
+		echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
+		echo "<br>";
 	 }
 }
 else
 {
-	echo "Please log in to access your details";
+	include 'notloginmessage.php';
 }	
 ?>	
 <?php

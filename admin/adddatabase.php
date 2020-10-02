@@ -61,5 +61,41 @@ if (isset ($_POST['addcustomer']))
 					
 		}
 	}
-
+	
+if (isset ($_POST['addaccount']))
+// getting data 
+	{
+		$customerid = $_POST['customerid'];
+		$openingbal = $_POST['openingbal'];
+		
+		$checkid = mysqli_query($con, "select * from customers where customerid = '$customerid'");
+	
+		if (mysqli_num_rows($checkid)==0)
+//execute if mysqliquery returns true
+		{
+			$iderrormsg = "Customer ID is invalid, please try again";
+			alert($iderrormsg);
+		}
+		else
+//execute if mysqliquery returns false
+		{
+//data insert into database
+			$sql = 	"INSERT INTO accounts (bsbno, openingbal, balance, customerid) 
+					VALUES ('302420', '$openingbal', '$openingbal', '$customerid')";
+			if (!mysqli_query($con,$sql))
+// if database is not connected or query is not executed, display error				
+			{
+				$dberrormsg = "Error in connecting the database, please try again";
+				alert($dberrormsg);
+			}
+			else
+// if sql query is executed
+			{
+//get the last inserted Customer ID
+				$successmsg = "Customer Account Details has been Created. Request customer to login to confirm";
+				alert($successmsg);
+				header("location: customerdetails.php");
+			}
+		}
+	}
 ?>

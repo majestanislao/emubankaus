@@ -14,28 +14,19 @@ session_start();
 <body>
 
 	<?php
-		if(isset($_SESSION['validate']))
+		if(isset($_SESSION['loggedin']))
 		{
 			while($row = mysqli_fetch_assoc($result))
 			{
 				$firstname = $row['firstname'];
 				$lastname = $row['lastname'];
 			}
-			$query = "select *from accounts where customerid = '".$customerid."'";
-			$result1 = mysqli_query($con, $query);
-			if ($result1)
+	?>
+			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>	
+	<?php
+			if (isset($accountno))
 			{
-				
-				while($cbal = mysqli_fetch_assoc($result1))
-				{
-					$bsbno = $cbal['bsbno'];
-					$accountno = $cbal['accountno'];
-					$balance = $cbal['balance'];
-				}
-				if (isset($bsbno))
-				{
 				?>
-				<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
 				<h3> Current Balance </h3><br>
 				<table>
 						<tr>
@@ -50,15 +41,11 @@ session_start();
 						</tr>
 				</table>
 			<?php
-				}
-				else
-				{
-					echo "your account has not been created yet. Please contact Bank";
-				}
 			}
-			?>
-			<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>	
-	<?php
+			else
+			{
+				echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
+			}
 		}
 	?>
     <main>

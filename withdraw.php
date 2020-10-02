@@ -16,19 +16,8 @@ session_start();
 </head>
 <body>
 <?php
-if(isset($_SESSION['validate']))
+if(isset($_SESSION['loggedin']))
 {
-	$query = "select *from accounts where customerid = '".$customerid."'";
-	$result1 = mysqli_query($con, $query);
-		if ($result1)
-		{
-			while($cbal = mysqli_fetch_assoc($result1))
-			{
-				$bsbno = $cbal['bsbno'];
-				$accountno = $cbal['accountno'];
-				$balance = $cbal['balance'];
-			}
-		}
 ?>
     <div class="container3">
 		<div style="text-align:center">
@@ -61,22 +50,21 @@ if(isset($_SESSION['validate']))
 
 				<center><button type="Submit" class="withdrawbtn" name="withdrawbtn">Withdraw</button> </center>
 			</form>
-			</div>
-		</div>
-	</div>
-    <?php
+	<?php
 	 }
 	 else
 	 {
-		echo "your accsount has not been created yet. Please contact Bank";
+		echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
 	 }
 }
 else
 {
-	echo "Please log in to access your details";
+	include 'notloginmessage.php';
 }
 ?>
-
+		</div>
+	</div>
+</div>
 <?php
 // Creating a function "alert" in PHP
 function alert($msg) 
@@ -91,22 +79,30 @@ if (isset($_POST['withdrawbtn']))
 {
 	$amount = $_POST['amount'];
 	$description = $_POST['description'];
-	
-	$creditaccountbal = $balance - $amount;
-	$query3 = 	"INSERT INTO transactions (amount, description, creditaccountno, creditaccountbal) 
-				VALUES ('$amount', '$description', '$accountno', '$creditaccountbal')";
-	$query4 =  "UPDATE accounts SET balance = '{$creditaccountbal}' WHERE accountno = $accountno";
-	
-	if (!mysqli_query($con,$query3) || !mysqli_query($con,$query4))
-// if database is not connected or query is not executed, display error				
+	$creditaccountdesc = "Cash Withdraw, Detail: ". $description;
+	if($amount>$balance)
 	{
-		$dberrormsg = "Error in connecting the database, please try again";
-		alert($dberrormsg);
+		$amounterror = "You do not have sufficient balance";
+		alert($amounterror);
 	}
 	else
 	{
-		$successmsg = "Transcation Successful";
-		alert($successmsg);
+	$creditaccountbal = $balance - $amount;
+	$query3 = 	"INSERT INTO transactions (amount, creditaccountdesc, creditaccountno, creditaccountbal) 
+				VALUES ('$amount', '$creditaccountdesc', '$accountno', '$creditaccountbal')";
+	$query4 =  "UPDATE accounts SET balance = '{$creditaccountbal}' WHERE accountno = $accountno";
+	
+		if (!mysqli_query($con,$query3) || !mysqli_query($con,$query4))
+	// if database is not connected or query is not executed, display error				
+		{
+			$dberrormsg = "Error in connecting the database, please try again";
+			alert($dberrormsg);
+		}
+		else
+		{
+			$successmsg = "Transcation Successful";
+			alert($successmsg);
+		}
 	}
 }
 ?>

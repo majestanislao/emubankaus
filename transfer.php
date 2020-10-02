@@ -17,19 +17,8 @@ session_start();
 
 <body>
 <?php
-if(isset($_SESSION['validate']))
+if(isset($_SESSION['loggedin']))
 {
-	$query = "select *from accounts where customerid = '".$customerid."'";
-	$result1 = mysqli_query($con, $query);
-		if ($result1)
-		{
-			while($cbal = mysqli_fetch_assoc($result1))
-			{
-				$bsbno = $cbal['bsbno'];
-				$accountno = $cbal['accountno'];
-				$balance = $cbal['balance'];
-			}
-		}
 ?>
 	<div class="container1">
 		<div style="text-align:center">
@@ -69,14 +58,17 @@ if(isset($_SESSION['validate']))
 	 }
 	 else
 	 {
-		echo "your account has not been created yet. Please contact Bank";
+		echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
 	 }
 }
 else
 {
-	echo "Please log in to access your details";
+	include 'notloginmessage.php';
 }
 ?>
+	</div>
+  </div>
+</div>
 
 <?php
 // Creating a function "alert" in PHP
@@ -95,6 +87,7 @@ if (isset($_POST['transferbtn']))
 	$amount = $_POST['amount'];
 	$description = $_POST['description'];
 	
+	
 	if($amount>$balance)
 	{
 		$amounterror = "You do not have sufficient balance";
@@ -111,10 +104,14 @@ if (isset($_POST['transferbtn']))
 				$debitbalance = $debitbal['balance'];
 			}
 				$debitaccountbal = $debitbalance + $amount;
+				$debitaccountdesc = "Transfer from ". $accountno. " Detail: ". $description;
 				$creditaccountbal = $balance - $amount;
-						
-			$query3 = 	"INSERT INTO transactions (amount, description, debitaccountno, debitaccountbal, creditaccountno, creditaccountbal) 
-						VALUES ('$amount', '$description', '$debitaccountno', '$debitaccountbal', $accountno, $creditaccountbal)";
+				$creditaccountdesc = "Transfer to ". $debitaccountno. " Detail: ". $description;
+				echo $debitaccountdesc, "    ";
+				echo $creditaccountdesc, "    ";
+										
+			$query3 = 	"INSERT INTO transactions (amount, debitaccountdesc, creditaccountdesc, debitaccountno, debitaccountbal, creditaccountno, creditaccountbal)
+						VALUES ('$amount', '$debitaccountdesc', '$creditaccountdesc', '$debitaccountno', '$debitaccountbal', '$accountno', '$creditaccountbal')";
 			$query4 =  "UPDATE accounts SET balance = '{$debitaccountbal}' WHERE accountno = $debitaccountno";
 			$query5 =  "UPDATE accounts SET balance = '{$creditaccountbal}' WHERE accountno = $accountno";
 			
@@ -139,9 +136,6 @@ if (isset($_POST['transferbtn']))
 	}
 }
 ?>
-	</div>
-  </div>
-</div>
 
 </body>
 <?php

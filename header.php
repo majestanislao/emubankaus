@@ -7,50 +7,10 @@
 </head>
 <body>
 <header>
-<?php
-// Three conditions checked. 
-// 1) Get paratmeter is not empty in URL, 
-// 2) loggedin varaiable is true i.e user is logged in, 
-// 3) Get parameter is same as customer id used while logging in
-	if(!empty($_GET) && isset($_SESSION['loggedin']) && $_SESSION['customerid'] == $_GET['GetID'])
-	{
-		$customerid = $_GET['GetID'];
-// Database connection 
-		$con = mysqli_connect('localhost', 'root', '', 'emubank');
-// From the database Select the customer whose customerid is equal to customer id used in login  
-		$sql = "select *from customers where customerid = '".$customerid."'";
-		$result = mysqli_query($con,$sql);
-// creating a new session varaiable "validate", and we will use this varaible in other pages to display specific data of the selected customer.  
-		$_SESSION['validate']='1'
-	?>
-<!-- if user login conditions are true Links are created with GET_ID, to pass the id between pages & Log out link is created.  -->
+
         <div class "emu">
 <!--When clicked on logo redirect to home page -->
-			<a href="index.php?GetID=<?php echo $customerid;?>"><img class="logo" src="Images/emu.png" alt="logo"></a>
-		</div>
-<!-- Navigation links -->
-			<nav>
-				<ul class="nav-links">
-					<li><a href="details.php?GetID=<?php echo $customerid;?>">Account Details</a></li>
-					<li><a href="transfer.php?GetID=<?php echo $customerid;?>">Transfer Money</a></li>
-					<li><a href="deposit.php?GetID=<?php echo $customerid;?>">Deposit Cash</a></li>
-					<li><a href="withdraw.php?GetID=<?php echo $customerid;?>">Withdraw Cash</a></li>
-					<li><a href="transactions.php?GetID=<?php echo $customerid;?>">Transactions</a></li>
-					<li><a href="faqs.php">FAQs</a></li>
-					<li><a class= "logout" href="logout.php">Log Out</a></li>
-				</ul>
-			</nav>
-	<?php
-	}
-	else
-	{
-// Nulling the value of the session varaible. 
-					$_SESSION['validate']=NULL;
-				?>
-<!-- if user login conditions are false, Links are created without GET_ID, & Log in link is created.  -->
-		<div class "emu">
-<!--When clicked on logo redirect to home page -->
-			<a href="index.php?GetID=<?php echo $customerid;?>"><img class="logo" src="Images/emu.png" alt="logo"></a>
+			<a href="index.php"><img class="logo" src="Images/emu.png" alt="logo"></a>
 		</div>
 <!-- Navigation links -->
 			<nav>
@@ -61,12 +21,43 @@
 					<li><a href="withdraw.php">Withdraw Cash</a></li>
 					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="faqs.php">FAQs</a></li>
-					<li><a class= "login" href="login.php">Log In</a></li>
+<?php
+// if user is login in the session then the following code is exceduted
+				if(isset($_SESSION['loggedin']))
+				{
+					$customerid = $_SESSION['customerid'];
+// Database connection 
+					$con = mysqli_connect('localhost', 'root', '', 'emubank');
+// From the database Select the customer whose customerid is equal to customer id used in login  
+					$sql = "select *from customers where customerid = '".$customerid."'";
+					$result = mysqli_query($con,$sql);
+// creating a new session varaiable "validate", and we will use this varaible in other pages to display specific data of the selected customer.  
+					$query = "select *from accounts where customerid = '".$customerid."'";
+					$result1 = mysqli_query($con, $query);
+					if ($result1)
+					{
+					while($account = mysqli_fetch_assoc($result1))
+						{
+							$bsbno = $account['bsbno'];
+							$accountno = $account['accountno'];
+							$balance = $account['balance'];
+						}
+					}
+?>
+				
+				<li><a class= "logout" href="logout.php?logout">Log Out</a></li>
+<?php
+				}
+				else
+				{
+?>
+				<li><a class= "login" href="login.php">Log In</a></li>
+<?php
+				}
+?>					
+					
 				</ul>
 			</nav>
-	<?php
-	}
-	?>
 </header>
 </body>
 </html>

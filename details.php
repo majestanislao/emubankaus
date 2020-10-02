@@ -16,7 +16,7 @@ session_start();
 <body>
 <div class="bg-img">
 <?php
-if(isset($_SESSION['validate']))
+if(isset($_SESSION['loggedin']))
 		{
 			while($row = mysqli_fetch_assoc($result))
 			{
@@ -28,22 +28,11 @@ if(isset($_SESSION['validate']))
 				$address = $row['address'];
 				$postcode = $row['postcode'];
 			}
-			$query = "select *from accounts where customerid = '".$customerid."'";
-			$result1 = mysqli_query($con, $query);
-			if ($result1)
+			
+			if (isset($accountno))
 			{
-				
-				while($cbal = mysqli_fetch_assoc($result1))
-				{
-					$bsbno = $cbal['bsbno'];
-					$accountno = $cbal['accountno'];
-					$balance = $cbal['balance'];
-				}
-				if (isset($bsbno))
-				{
-				?>
-				<h2> Welcome <?php echo $firstname, " ", $lastname;?> </h2><br>
-				<h2>Account Details</h2> <br>
+?>
+			<h2>Account Details</h2> <br>
 				<table width="110%">
 					<thead align="center">
 						<tr>
@@ -59,13 +48,15 @@ if(isset($_SESSION['validate']))
 					</thead>
 				</table>
 			<?php
-				}
-				else
-				{
-					echo "your account has not been created yet. Please contact Bank";
-				}
 			}
-			?> 
+			else
+			{
+				echo "<h2>Account Details</h2> <br>";
+				echo "<h4 align='center'>Your account has not been created yet. Please contact Bank Admin</h4>";
+				echo "<br>";
+			}
+		
+?> 
 <br>
 <h2> Personal Details </h2>
 <!--creating table headings for customer details -->
@@ -111,13 +102,11 @@ if(isset($_SESSION['validate']))
 				
 	</table>
 <?php
-}
-else
-{
-	echo "Please log in to access your details";
-}
-?>
-<?php
+		}
+		else
+		{
+			include 'notloginmessage.php';
+		}
 	include 'footer.php';
 ?>
 </body>			
