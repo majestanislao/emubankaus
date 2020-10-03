@@ -4,6 +4,7 @@
     <title>EMU Bank Austrlalia</title>
 </head>
 <body>
+		<footer class = "footer">
 		<br>
 		<center><hr style="width:50%"><br>
 		<h4>Connect with us</h4>
@@ -14,5 +15,6 @@
 		<br>
 		&copy; Copyright 2020. All Rights Reserved.<br>
 		<a href="mailto:emubankaustralia.com">emubankaustralia@gmail.com</a></center>
+		</footer>
 </body>
 </html>

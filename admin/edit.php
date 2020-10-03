@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,36 +11,32 @@
 	<title>Update Customer Record for EMU banking</title>	
 	<link type="text/css" href="./css/edit.css" rel="stylesheet"/>
 	<?php
-		$con = mysqli_connect('localhost', 'root', '', 'emubank');
-		$customerid = $_GET['GetID'];
-		$query = "select *from customers where customerid = '".$customerid."'";
-		$result = mysqli_query($con,$query);
-		while($row = mysqli_fetch_assoc($result))
-		{
-			$firstname = $row['firstname'];
-			$lastname = $row['lastname'];
-			$gender = $row['gender'];
-			$emailid = $row['emailid'];
-			$phone = $row['phone'];
-			$address = $row['address'];
-			$postcode = $row['postcode'];
-		}
+		include 'header.php';
 	?>	
 </head>
-
-<header>
-<div class "emu">
-<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
-
-</div>
-
-</header>
-
+<?php
+if(isset($_SESSION['admin']))
+{
+	$con = mysqli_connect('localhost', 'root', '', 'emubank');
+	$customerid = $_GET['GetID'];
+	$query = "select *from customers where customerid = '".$customerid."'";
+	$result = mysqli_query($con,$query);
+	while($row = mysqli_fetch_assoc($result))
+	{
+		$firstname = $row['firstname'];
+		$lastname = $row['lastname'];
+		$gender = $row['gender'];
+		$emailid = $row['emailid'];
+		$phone = $row['phone'];
+		$address = $row['address'];
+		$postcode = $row['postcode'];
+	}
+?>
 <body>
 
 <div class="form">
 	<h2>Update Customer Record for EMU Banking</h2>
-	<form name="updateform" class="elements" action="update.php?ID=<?php echo $customerid ?>" method = "POST">
+	<form name="updateform" class="elements" action="edit.php?GetID=<?php echo $customerid ?>" method = "POST">
 <div class="inputfield">
 	<label> First Name: </label>
     <input type="text" id="firstname" name="firstname" required 
@@ -90,6 +90,51 @@
 </div>
 
 	</form>
-
-
 </div>
+<?php
+}
+else
+{
+	header("location:login.php?loginerror");
+}
+
+// Creating a function "alert" in PHP
+function alert($msg) 
+{
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+	return false;
+}
+// The below code will be executed when user try to submit the data
+if (isset ($_POST['update']))
+// getting data 
+{
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$gender = $_POST['gender'];
+	$phone = $_POST['phone'];
+	$address = $_POST['address'];
+	$postcode = $_POST['postcode'];
+
+//data insert into database
+	$sql = 	"UPDATE customers SET firstname = '{$firstname}', 
+								  lastname = '{$lastname}', 
+								  gender = '{$gender}', 
+								  phone = '{$phone}', 
+								  address = '{$address}', 
+								  postcode = '{$postcode}' 
+			WHERE customerid = $customerid";
+	$result = mysqli_query($con,$sql);
+
+	if ($result)
+// if database is not connected or query is not executed, display error				
+	{
+		header("location:index.php?success");
+	}
+	else
+// if sql query is executed
+	{
+		$dberrormsg = "Error in connecting the database, please try again";
+		alert($dberrormsg);
+	}		
+}
+?>

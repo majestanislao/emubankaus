@@ -61,6 +61,7 @@ if(isset($_SESSION['loggedin']))
 else
 {
 //include the following file to showing login error message.
+	include 'notloginmessage.php';
 }
 ?>
 		</div>

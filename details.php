@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
-<title>EMU Bank Austrlalia</title>
+<title>Account Details</title>
 <link type="text/css" href="./css/details.css" rel="stylesheet"/>
 <?php
 include 'header.php';

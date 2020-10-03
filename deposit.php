@@ -80,7 +80,7 @@ $con = mysqli_connect('localhost', 'root', '', 'emubank');
 //when deposit button is clicked
 if (isset($_POST['depositbtn']))
 {
-//assign the varaiables using the user input
+
 	$amount = $_POST['amount'];
 	$description = $_POST['description'];
 //debit account description is created using the user input

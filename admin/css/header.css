@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@charset "utf-8";
+/* CSS Document */
+
+/*styling logo */
+.logo
+	{
+		position: relative;
+	}
+/* styling header */
+header 
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 5%;
+		background: lightsteelblue;
+	}
+/* Navbar container */
+.navbar {
+	  overflow: hidden;
+	  
+	  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+	  float: left;
+	  font-size: 16px;
+	  color: white;
+	  text-align: center;
+	  background-color: #2980B9;
+	  padding: 14px 16px;
+	  margin: 20px;
+	  text-decoration: none;
+	 
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover
+{
+	opacity: 0.8;
+}

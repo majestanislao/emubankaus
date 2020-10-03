@@ -1,27 +1,24 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<meta charset="utf-8">
-	<meta name="view port" content="width=device-width, initial scale=1">
-	<title>Register for EMU banking</title>	
+	<title>Add Customer for EMU banking</title>	
 	<link type="text/css" href="./css/edit.css" rel="stylesheet"/>
-
+	<?php
+		include 'header.php';
+	?>	
 </head>
-
-<header>
-<div class "emu">
-<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
-
-</div>
-
-</header>
-
+<?php
+if(isset($_SESSION['admin']))
+{
+?>
 <body>
 
 <div class="form">
 	<h2>Register for EMU Banking</h2>
-	<form name="addform" class="elements" action="adddatabase.php" method = "POST">
+	<form name="addform" class="elements" action="addcustomer.php" method = "POST">
 <div class="inputfield">
 	<label> First Name: </label>
     <input type="text" id="firstname" name="firstname" required 
@@ -69,3 +66,67 @@
 </div>
 </body>
 </html>
+<?php
+}
+else
+{
+	header("location:login.php?loginerror");
+}
+
+function password_generate($chars) 
+{
+  $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+  return substr(str_shuffle($data), 0, $chars);
+}
+
+function alert($msg) 
+{
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+	return false;
+}
+
+// The below code will be executed when user try to submit the data
+if (isset ($_POST['addcustomer']))
+// getting data 
+	{
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$gender = $_POST['gender'];
+		$emailid = $_POST['emailid'];
+		$phone = $_POST['phone'];
+		$address = $_POST['address'];
+		$postcode = $_POST['postcode'];
+		$password = password_generate(8);
+		
+
+		$duplicate = mysqli_query($con, "select * from customers where emailid = '$emailid'");
+	
+				
+		if (mysqli_num_rows($duplicate)>0)
+//execute if mysqliquery returns true
+		{
+			$emailerrormsg = "Email id is already in use";
+			alert($emailerrormsg);
+		}
+		else
+//execute if mysqliquery returns false
+		{
+//data insert into database
+			$sql = 	"INSERT INTO customers (firstname, lastname, gender, emailid, phone, address, postcode, password) 
+					VALUES ('$firstname', '$lastname', '$gender', '$emailid', '$phone', '$address', '$postcode', '$password')";
+			if (!mysqli_query($con,$sql))
+// if database is not connected or query is not executed, display error				
+			{
+				$dberrormsg = "Error in connecting the database, please try again";
+				alert($dberrormsg);
+			}
+			else
+// if sql query is executed
+			{
+//get the last inserted Customer ID
+				header("location:index.php?addcustomer");
+			}
+					
+		}
+	}
+?>
