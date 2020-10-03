@@ -107,7 +107,7 @@ $con = mysqli_connect('localhost', 'root', '', 'emubank');
 
 // The below code will be executed when user try to submit the data
 if (isset ($_POST['register']))
-// getting data 
+// getting user input data 
 {
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
@@ -126,13 +126,13 @@ if (isset ($_POST['register']))
 		$duplicate = mysqli_query($con, "select * from customers where emailid = '$emailid'");
 				
 		if (mysqli_num_rows($duplicate)>0)
-//execute if mysqliquery returns true i.e. email id already in the database record
+//execute if mysqliquery returns more than 0 rows i.e. email id already in the database record
 		{
 			$emailerrormsg = "Email id is already in use";
 			alert($emailerrormsg);
 		}
 		else
-//execute if mysqliquery returns false i.e. new email id is entered by user
+//execute if mysqliquery returns no rows i.e. new email id is entered by user
 		{
 //data insert into database
 			$sql = 	"INSERT INTO customers (firstname, lastname, gender, emailid, phone, address, postcode, password) 

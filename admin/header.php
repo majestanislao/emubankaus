@@ -12,9 +12,11 @@
 </head>
 <body>
 <header>	
+<!--logo position in the header-->
 		<div class "logo">
 		<img src="images/emu.png" alt='Official logo' width='300px' height='100px'></a>
 		</div>
+<!-- Navigation links-->
 		<div class= "navbar">
 		<a href="index.php">Customer Details</a>
 		<a href="addcustomer.php">Add Customer</a>

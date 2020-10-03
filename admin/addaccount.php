@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +12,10 @@ session_start();
 	?>
 </head>
 
-
-
 <body>
+
 <?php
+//if session variable is true i.e. admin is logged in, display the html form
 if(isset($_SESSION['admin']))
 {
 ?>
@@ -40,6 +41,8 @@ if(isset($_SESSION['admin']))
 </html>
 <?php
 }
+// if session variable turns false that means cannot perform any operations on customers data 
+// and redirect admin to login page with loginerror varaible in URL 
 else
 {
 	header("location:login.php?loginerror");
@@ -50,9 +53,9 @@ function alert($msg)
     echo "<script type='text/javascript'>alert('$msg');</script>";
 	return false;
 }
-
+//When addaccount button is clicked
 if (isset ($_POST['addaccount']))
-// getting data 
+// getting user entered data 
 	{
 		$customerid = $_POST['customerid'];
 		$openingbal = $_POST['openingbal'];
@@ -84,9 +87,8 @@ if (isset ($_POST['addaccount']))
 				alert($dberrormsg);
 			}
 			else
-// if sql query is executed
+// if sql query is executed, redirect to index page with addaccount variable in URL 
 			{
-
 				header("location: index.php?addaccount");
 			}
 		}

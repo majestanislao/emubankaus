@@ -1,19 +1,25 @@
 <?php
 session_start();
+// Creating a function "alert" in PHP
+function alert($msg) 
+{
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+	return false;
+}
 
+//if admin not logged in, the other pages re-direct it to login page with 'loginerror' variable in URL
 if (isset($_REQUEST['loginerror'])) 
 	{
-//if admin not logged in, the other pages re-direct it to login page with 'loginerror' variable in URL
 //display the error message 
 		$loginmsg = "You are not logged in, please login to continue";
-		echo "<script type='text/javascript'>alert('$loginmsg');</script>";
+		alert($loginmsg);
 	}
+//when admin logged out, it re-drects to login page with 'logout' variable in URL
 if (isset($_REQUEST['logout'])) 
 	{
-//if admin not logged in, the other pages re-direct it to login page with 'loginerror' variable in URL
-//display the error message 
+//display that admin is successfully logout
 		$logoutmsg = "You are successfully log out";
-		echo "<script type='text/javascript'>alert('$logoutmsg');</script>";
+		alert($logoutmsg);
 	}
 ?>
 
@@ -52,16 +58,9 @@ if (isset($_REQUEST['logout']))
 </html>
 
 <?php
-// Creating a function "alert" in PHP
-function alert($msg) 
-{
-    echo "<script type='text/javascript'>alert('$msg');</script>";
-	return false;
-}
 
 // creating database connection				
 $con = mysqli_connect('localhost', 'root', '', 'emubank');
-
 
 //when login button is clicked
 if (isset($_POST['login']))
