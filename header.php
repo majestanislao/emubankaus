@@ -19,6 +19,7 @@
 					<li><a href="transactions.php">Transactions</a></li>
 					<li><a href="transfer.php">Transfer Money</a></li>
 					<li><a href="deposit.php">Deposit Cash</a></li>
+					<li><a href="3rdpartydeposit.php">3rd Party Deposit</a></li>
 					<li><a href="withdraw.php">Withdraw Cash</a></li>
 					<li><a href="faqs.php">FAQs</a></li>
 <?php
@@ -30,10 +31,10 @@
 // Database connection 
 					$con = mysqli_connect('localhost', 'root', '', 'emubank');
 // From the database Select the customer whose customerid is equal to customer id used in login  
-					$sql = "select *from customers where customerid = '".$customerid."'";
+					$sql = "select *from customers where customerid = '$customerid'";
 					$result = mysqli_query($con,$sql);
 // From the database Select the account whose customerid is equal to customer id used in login  
-					$query = "select *from accounts where customerid = '".$customerid."'";
+					$query = "select *from accounts where customerid = '$customerid'";
 					$result1 = mysqli_query($con, $query);
 // if the account exist of loggedin customer fetch the data. Following data is used in other pages. 
 					if ($result1)

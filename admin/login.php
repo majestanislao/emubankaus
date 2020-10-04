@@ -71,12 +71,22 @@ if (isset($_POST['login']))
 		
 //if username and password is filled
 	if ($_SESSION['username']!="" && $password!="")
-//validating the data from database i.e. customer id and password match with any data in database
+//validating if entered username exists in the database
 	{
+		$username = "SELECT username FROM admin WHERE username = '{$_SESSION['username']}'";
+		$usernameresult = mysqli_query($con,$username);
+		if (mysqli_num_rows($usernameresult) == 0)
+		{
+			$usernameerror = "Username is not valid. Contact IT Department";
+			alert($usernameerror);
+		}
+		else
+//validating the data from database i.e. username and password match with any data in database
+		{
 		$sql = "SELECT username FROM admin WHERE username = '{$_SESSION['username']}' and password = '{$password}'";
 		$result = mysqli_query($con,$sql);
 //if query return any rows			
-			if ($count = mysqli_num_rows($result) > 0)	
+			if (mysqli_num_rows($result) > 0)	
 			{
 //creating session varaible logged in and assigning the value of this varaiable as 1 or true
 				$_SESSION['admin']='1';
@@ -89,6 +99,7 @@ if (isset($_POST['login']))
 				$loginerror = "Username and Password do not match";
 				alert($loginerror);
 			}
+		}
 	}
 }
 ?>

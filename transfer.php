@@ -141,7 +141,7 @@ if (isset($_POST['transferbtn']))
 //if account is not found in which customer is trying to transfer the money, then show error
 		else
 		{
-			$accounterrormsg = "The account number entered is invalid";
+			$accounterrormsg = "The bsb number and/or account number entered is invalid";
 			alert($accounterrormsg);
 		}
 		

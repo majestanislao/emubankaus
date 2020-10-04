@@ -8,7 +8,7 @@ if (isset($_REQUEST['register']))
 //since varaible is only in the URL if a customer is re-directed after registration, it will ensure that at all other time, the variable is NULL
 		$registercustomerid = $_SESSION['lastcustomerid'];
 //display the successful registergation message with the new customer id 
-		$successmsg = "User Registered. Your client id is $registercustomerid";
+		$successmsg = "User Registered. Your customer id is $registercustomerid";
 		echo "<script type='text/javascript'>alert('$successmsg');</script>";
 	}
 ?>
@@ -87,15 +87,24 @@ if (isset($_POST['login']))
 //getting entered data and assigning customer id to a session varaiable
 	$_SESSION['customerid'] = mysqli_real_escape_string($con,$_POST['customerid']);
 	$password = mysqli_real_escape_string($con,$_POST['password']);
-		
 //if customer ID and password is filled
 	if ($_SESSION['customerid']!="" && $password!="")
-//validating the data from database i.e. customer id and password match with any data in database
 	{
-		$sql = "SELECT customerid FROM customers WHERE customerid = '{$_SESSION['customerid']}' and password = '{$password}'";
-		$result = mysqli_query($con,$sql);
+//validating if entered customerid exists in the database
+		$customerid = "SELECT customerid FROM customers WHERE customerid = '{$_SESSION['customerid']}'";
+		$customeridresult = mysqli_query($con,$customerid);
+		if (mysqli_num_rows($customeridresult) == 0)
+		{
+			$customeriderror = "CustomerID is not valid. Contact Bank";
+			alert($customeriderror);
+		}
+		else
+		{
+//validating the data from database i.e. customer id and password match with any data in database
+		$loginvalidation = "SELECT customerid FROM customers WHERE customerid = '{$_SESSION['customerid']}' and password = '{$password}'";
+		$loginresult = mysqli_query($con,$loginvalidation);
 //if query return any rows			
-			if ($count = mysqli_num_rows($result) > 0)	
+			if (mysqli_num_rows($loginresult) > 0)	
 			{
 //creating session varaible logged in and assigning the value of this varaiable as 1 or true
 				$_SESSION['loggedin']='1';
@@ -108,6 +117,7 @@ if (isset($_POST['login']))
 				$loginerror = "CustomerID and Password do not match";
 				alert($loginerror);
 			}
+		}	
 	}
 }
 ?>

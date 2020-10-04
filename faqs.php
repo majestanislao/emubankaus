@@ -14,6 +14,29 @@
     <h1>Frequently Asked Questions</h1>
     <div class="accordion">
         <div>
+            <input type="checkbox" name="FAQs" id="Question7" class="accordion-input">
+            <label for="Question7" class="accordion-label">I forgot my password, there is no option to reset password. How I can reset my password?</label>
+            <div class="accordion-content">
+                <p>For security reasons, only Bank IT department can reset the customer password. 
+				Please contact bank with valid authentication document to reset your password</p>
+            </div>
+        </div>
+        <div>
+            <input type="checkbox" name="FAQs" id="Question8" class="accordion-input">
+            <label for="Question8" class="accordion-label">I am a new customer and upon login it says no account exists. What should I do?</label>
+            <div class="accordion-content">
+                <p>For all the new customers, bank create a standard savings account within 2-5 business days. If your account is not created by that time, Please contact bank </p>
+            </div>
+        </div>
+        <div>
+            <input type="checkbox" name="FAQs" id="Question9" class="accordion-input">
+            <label for="Question9" class="accordion-label">I cannot edit my personal details in account detail page. How can I edit my personal details?</label>
+            <div class="accordion-content">
+               <p>For security reasons, only Bank adminstrator can edit customer details. 
+				Please contact bank with and request the Bank admin to amend your personal details</p>
+            </div>
+        </div>
+		<div>
             <input type="checkbox" name="FAQs" id="Question1" class="accordion-input">
             <label for="Question1" class="accordion-label">I want to open a new account. What type of identification do I have to present to the bank?</label>
             <div class="accordion-content">

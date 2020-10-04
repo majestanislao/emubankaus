@@ -28,7 +28,7 @@ if(isset($_SESSION['loggedin']))
 	
 			<div class="column">
      <?php 
-//if customer has an account no then create the following deposit form
+//if customer has an account number then create the following deposit form
 	 if (isset($accountno))
 	 {
 	 ?>
